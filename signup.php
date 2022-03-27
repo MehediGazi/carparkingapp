@@ -66,12 +66,12 @@
                   <div class="col-6 row d-flex justify-content-center card">
                         <form action="signup_process.php", method="POST">
                               <div class="row d-flex justify-content-center">
-                                      <div class="col-xl-6	col-lg-12 col-md-12 inputBox">
+                                      <div class="col-xl-6  col-lg-12 col-md-12 inputBox">
                                          
                                             <input type="text" placeholder="Enter your first name", name='fn'>
                                      
                                       </div>
-                                      <div class="col-xl-6	col-lg-12 col-md-12  inputBox">
+                                      <div class="col-xl-6  col-lg-12 col-md-12  inputBox">
                                       
                                             <input type="text" placeholder="Enter your last name", name='ln'>
                                        
@@ -79,12 +79,12 @@
                                    </div>
            
                                    <div class="row d-flex justify-content-center">
-                                         <div class="col-xl-6	col-lg-12 col-md-12 inputBox">
+                                         <div class="col-xl-6 col-lg-12 col-md-12 inputBox">
                                             
                                                <input type="email" placeholder="Enter your Email", name='email'>
                                         
                                          </div>
-                                         <div class="col-xl-6	col-lg-12 col-md-12  inputBox">
+                                         <div class="col-xl-6 col-lg-12 col-md-12  inputBox">
                                          
                                                <input type="text" placeholder="phone number with country code", name='phone'>
                                           
@@ -94,12 +94,12 @@
                                       
 
                                       <div class="row d-flex justify-content-center">
-                                         <div class="col-xl-6	col-lg-12 col-md-12 inputBox">
+                                         <div class="col-xl-6 col-lg-12 col-md-12 inputBox">
                                             
                                                <input type="text" placeholder="Address", name='addr'>
                                         
                                          </div>
-                                         <div class="col-xl-6	col-lg-12 col-md-12  inputBox">
+                                         <div class="col-xl-6 col-lg-12 col-md-12  inputBox">
                                          
                                                <input type="text" placeholder="Car Number Plate", name='car'>
                                           
@@ -111,20 +111,15 @@
                                    <div class="row">
                                       
 
-                                      <div class="col-xl-6	col-lg-12 col-md-12 inputBox">
-                                                  <select class="cs-select cs-skin-elastic ", name="gender">
-                                                     <option value="" disabled selected>Select your Gender</option>
-                                                     <option class="option" value="element_1" data-class="element_1">Male</option>
-                                                     <option value="element_2" data-class="element_2">Female</option>
-                                                  </select>
-                                          
+                                      <div class="col-xl-6  col-lg-12 col-md-12 inputBox">
+                                                  <input type="text" placeholder="Gender", name='gender'>
                                       
                                       </div>
 
 
 
                        
-                                      <div class="col-xl-6	col-lg-12 col-md-12 ">
+                                      <div class="col-xl-6  col-lg-12 col-md-12 ">
                                          <div class="inputBox">
                                             <input type="password" placeholder="enter password", name="pass">
                                          </div>
