@@ -6,6 +6,7 @@
         $email=$_POST['email'];
         $pass=md5($_POST['pass']);
         
+        
         try{
 
             $dbcon = new PDO("mysql:host=localhost:3306;dbname=carparking;","root","");
