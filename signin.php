@@ -66,12 +66,12 @@
                   <div class="col-xl-6 col-xxl-6 col-md-12 col-sm-12 row d-flex justify-content-center">
                         <div class="card ">
                               <h2 class="text-center">Login Form</h2>
-                              <form action="#">
+                              <form action="signin_process.php", method="POST">
                                 <div class="inputBox">
-                                  <input type="text" placeholder="Username">
+                                  <input type="text" placeholder="Email", name="email">
                                 </div>
                                 <div class="inputBox">
-                                  <input type="password" placeholder="Password">
+                                  <input type="password" placeholder="Password", name="pass">
                                 </div>
                                 <div class="inputBox text-center">
                                     <button class="btn ">Submit</button>
