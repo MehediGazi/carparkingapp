@@ -15,14 +15,17 @@
             
             try{
                 $returnval=$dbcon->query($query);
+                $info = $returnval->fetchAll();
+
                 if($returnval->rowCount()==1){
 
                     session_start();
                     
                     $_SESSION['email']=$email;
+
                     ?>
                         <script>
-                            window.location.assign('home.html');
+                            window.location.assign('home.php');
                         </script>
                     <?php
                 }

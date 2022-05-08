@@ -1,3 +1,26 @@
+<?php 
+session_start();
+$email = $_SESSION['email'];
+
+$dbcon = new PDO("mysql:host=localhost:3306;dbname=carparking;","root","");
+$dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+$query="SELECT * FROM carowner WHERE email='$email'";
+
+$returnval=$dbcon->query($query);
+$info = $returnval->fetchAll();
+
+foreach ($info as $row){
+    $_SESSION['fn'] = $row['firstname'];
+    $_SESSION['ln'] = $row['lastname'];
+    $_SESSION['id'] = $row['id'];
+}
+$fn = $_SESSION['fn'];
+$ln = $_SESSION['ln'];
+$ownerid = $_SESSION['id'];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,7 +47,7 @@
     <!-- custom css -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
-    <title>RomaxDev</title>
+    <title>GarirBari</title>
 </head>
 
 <body>
@@ -85,14 +108,14 @@
         <div class="container">
             <div class="ideas-container">
                 <div class="ideas-item abtxt">
-                    <div class="hero1-h1">Wellcome <span class="true ">Md. Sajib Miah</span>
+                    <div class="hero1-h1"> <span class="true "><?php echo $fn, " ", $ln; ?></span>
                         <h1>
-                          To  Your Profile
+                        Wellcome To  Your Profile
                         </h1>
                     </div>
 
                     <p>Add your parking spot here</p>
-                    <button class="btn-grad1"><a href="carownerlogin.html" class="hero1-btn mb-4">Add Here</a></button>
+                    <button class="btn-grad1"><a href="parkingspace.html" class="hero1-btn mb-4">Add Parking Space</a></button>
                     
                 </div>
                 <div class="ideas-item bc-img">
@@ -113,128 +136,46 @@
 					<table>
 						<thead>
 							<tr class="table100-head">
-								<th class="column1">Date</th>
-								<th class="column2">Order ID</th>
-								<th class="column3">Name</th>
-								<th class="column4">Price</th>
-								<th class="column5">Quantity</th>
-								<th class="column6">Total</th>
+								<th class="column1">No</th>
+								<th class="column2">Area</th>
+								<th class="column3">Address</th>
+								<th class="column4">Available Space</th>
+								<th class="column5">Rent</th>
+								<th class="column6">Actions</th>
 							</tr>
 						</thead>
 						<tbody>
-								<tr>
-									<td class="column1">2017-09-29 01:22</td>
-									<td class="column2">200398</td>
-									<td class="column3">iPhone X 64Gb Grey</td>
-									<td class="column4">$999.00</td>
-									<td class="column5">1</td>
-									<td class="column6">$999.00</td>
+
+                                <?php
+                                $query1="SELECT * FROM parkingspace WHERE ownerid='$ownerid'";
+
+                                $returnval1=$dbcon->query($query1);
+                                $info1 = $returnval1->fetchAll();
+                                $no = 1;
+                                foreach($info1 as $row1){
+                                    $district = $row1['district'];
+                                    $area = $row1['area'];
+                                    $road1 = $row1['road1'];
+                                    $road2 = $row1['road2'];
+                                    $house = $row1['house'];
+                                    $spacenum = $row1['spacenum'];
+                                    $rent = $row1['rent'];
+                                    
+                                    ?>
+
+                                    <tr>
+									<td class="column1"><?php echo $no;?></td>
+									<td class="column2"><?php echo $area;?></td>
+									<td class="column3"><?php echo "House: ",$house, ", Road: ", $road1, $road2, ", Area: ",$area, ", District: ", $district;?></td>
+									<td class="column4"><?php echo $spacenum;?></td>
+									<td class="column5"><?php echo $rent;?></td>
+									<td class="column6"><?php echo "Buttons";?></td>
 								</tr>
-								<tr>
-									<td class="column1">2017-09-28 05:57</td>
-									<td class="column2">200397</td>
-									<td class="column3">Samsung S8 Black</td>
-									<td class="column4">$756.00</td>
-									<td class="column5">1</td>
-									<td class="column6">$756.00</td>
-								</tr>
-								<tr>
-									<td class="column1">2017-09-26 05:57</td>
-									<td class="column2">200396</td>
-									<td class="column3">Game Console Controller</td>
-									<td class="column4">$22.00</td>
-									<td class="column5">2</td>
-									<td class="column6">$44.00</td>
-								</tr>
-								<tr>
-									<td class="column1">2017-09-25 23:06</td>
-									<td class="column2">200392</td>
-									<td class="column3">USB 3.0 Cable</td>
-									<td class="column4">$10.00</td>
-									<td class="column5">3</td>
-									<td class="column6">$30.00</td>
-								</tr>
-								<tr>
-									<td class="column1">2017-09-24 05:57</td>
-									<td class="column2">200391</td>
-									<td class="column3">Smartwatch 4.0 LTE Wifi</td>
-									<td class="column4">$199.00</td>
-									<td class="column5">6</td>
-									<td class="column6">$1494.00</td>
-								</tr>
-								<tr>
-									<td class="column1">2017-09-23 05:57</td>
-									<td class="column2">200390</td>
-									<td class="column3">Camera C430W 4k</td>
-									<td class="column4">$699.00</td>
-									<td class="column5">1</td>
-									<td class="column6">$699.00</td>
-								</tr>
-								<tr>
-									<td class="column1">2017-09-22 05:57</td>
-									<td class="column2">200389</td>
-									<td class="column3">Macbook Pro Retina 2017</td>
-									<td class="column4">$2199.00</td>
-									<td class="column5">1</td>
-									<td class="column6">$2199.00</td>
-								</tr>
-								<tr>
-									<td class="column1">2017-09-21 05:57</td>
-									<td class="column2">200388</td>
-									<td class="column3">Game Console Controller</td>
-									<td class="column4">$999.00</td>
-									<td class="column5">1</td>
-									<td class="column6">$999.00</td>
-								</tr>
-								<tr>
-									<td class="column1">2017-09-19 05:57</td>
-									<td class="column2">200387</td>
-									<td class="column3">iPhone X 64Gb Grey</td>
-									<td class="column4">$999.00</td>
-									<td class="column5">1</td>
-									<td class="column6">$999.00</td>
-								</tr>
-								<tr>
-									<td class="column1">2017-09-18 05:57</td>
-									<td class="column2">200386</td>
-									<td class="column3">iPhone X 64Gb Grey</td>
-									<td class="column4">$999.00</td>
-									<td class="column5">1</td>
-									<td class="column6">$999.00</td>
-								</tr>
-								<tr>
-									<td class="column1">2017-09-22 05:57</td>
-									<td class="column2">200389</td>
-									<td class="column3">Macbook Pro Retina 2017</td>
-									<td class="column4">$2199.00</td>
-									<td class="column5">1</td>
-									<td class="column6">$2199.00</td>
-								</tr>
-								<tr>
-									<td class="column1">2017-09-21 05:57</td>
-									<td class="column2">200388</td>
-									<td class="column3">Game Console Controller</td>
-									<td class="column4">$999.00</td>
-									<td class="column5">1</td>
-									<td class="column6">$999.00</td>
-								</tr>
-								<tr>
-									<td class="column1">2017-09-19 05:57</td>
-									<td class="column2">200387</td>
-									<td class="column3">iPhone X 64Gb Grey</td>
-									<td class="column4">$999.00</td>
-									<td class="column5">1</td>
-									<td class="column6">$999.00</td>
-								</tr>
-								<tr>
-									<td class="column1">2017-09-18 05:57</td>
-									<td class="column2">200386</td>
-									<td class="column3">iPhone X 64Gb Grey</td>
-									<td class="column4">$999.00</td>
-									<td class="column5">1</td>
-									<td class="column6">$999.00</td>
-								</tr>
-								
+                                <?php
+                                $no = $no+1;
+                                }
+                                ?>
+	
 						</tbody>
 					</table>
 				</div>

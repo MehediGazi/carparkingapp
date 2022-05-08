@@ -45,7 +45,7 @@
     <!-- custom css -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
-    <title>RomaxDev</title>
+    <title>GarirBari</title>
   </head>
 
   <body>
@@ -112,17 +112,17 @@
         <div class="row d-flex justify-content-center">
           <div class="col-6 row d-flex justify-content-center card">
             <h3>Please Fill Parking Details</h3>
-            <form action="carownersignup_process.php" , method="POST">
+            <form action="parkingspace_process.php" , method="POST">
               <div class="row d-flex justify-content-center">
                 <div class="col-xl-6 col-lg-12 col-md-12 inputBox">
-                    <select class="cs-select cs-skin-elastic ", name="gender">
+                    <select class="cs-select cs-skin-elastic ", name="district">
                         <option value="" disabled selected>Select Your District</option>
-                        <option class="option" value="Male" data-class="element_1">Dhaka</option>
-                        <option value="Female" data-class="element_2">Mirpur</option>
+                        <option class="option" value="Dhaka" data-class="element_1">Dhaka</option>
+                        <option value="Mirpur" data-class="element_2">Mirpur</option>
                      </select>
                 </div>
                 <div class="col-xl-6 col-lg-12 col-md-12 inputBox">
-                  <input type="text" placeholder="Parking Area" , name="ln" />
+                  <input type="text" placeholder="Parking Area" , name="area" />
                 </div>
               </div>
 
@@ -132,7 +132,7 @@
                     type="text"
                     placeholder="Road-Number-1"
                     ,
-                    name="email"
+                    name="road1"
                   />
                 </div>
                 <div class="col-xl-6 col-lg-12 col-md-12 inputBox">
@@ -140,28 +140,28 @@
                     type="text"
                     placeholder="Road-Number-2"
                     ,
-                    name="phone"
+                    name="road2"
                   />
                 </div>
               </div>
 
               <div class="row d-flex justify-content-center">
                 <div class="col-xl-6 col-lg-12 col-md-12 inputBox">
-                  <input type="text" placeholder="House-Number" , name="addr" />
+                  <input type="text" placeholder="House-Number" , name="house" />
                 </div>
                 <div class="col-xl-6 col-lg-12 col-md-12 inputBox">
                   <input
                     type="text"
                     placeholder="Parking Space Number"
                     ,
-                    name="car"
+                    name="spacenum"
                   />
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-xl-6 col-lg-12 col-md-12 inputBox">
-                  <input type="file" name="pass" />
+                  <input type="file" name="img" />
                 </div>
 
                 <div class="col-xl-6 col-lg-12 col-md-12">

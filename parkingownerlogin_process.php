@@ -22,7 +22,7 @@
                     $_SESSION['email']=$email;
                     ?>
                         <script>
-                            window.location.assign('home.html');
+                            window.location.assign('home.php');
                         </script>
                     <?php
                 }

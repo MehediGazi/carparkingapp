@@ -24,8 +24,17 @@
 				
 				$dbcon->exec($quary);
 
+				session_start();
+                    
+				$_SESSION['email']=$email;
+
+
+				$_SESSION['fn'] = $fn;
+				$_SESSION['ln'] = $ln;
+	
+
 				?>
-					<script>window.location.assign('home.html')</script>
+					<script>window.location.assign('home.php')</script>
 				<?php
 			} catch (PDOExpection $ex) {
 				?>
