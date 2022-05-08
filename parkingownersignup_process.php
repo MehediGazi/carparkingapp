@@ -33,7 +33,7 @@
 				$_SESSION['ln'] = $ln;
 
 				?>
-					<script>window.location.assign('home.php')</script>
+					<script>window.location.assign('parkinghome.php')</script>
 				<?php
 			} catch (PDOExpection $ex) {
 				?>

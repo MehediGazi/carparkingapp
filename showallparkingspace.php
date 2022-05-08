@@ -1,23 +1,7 @@
 <?php 
-session_start();
-$email = $_SESSION['email'];
 
 $dbcon = new PDO("mysql:host=localhost:3306;dbname=carparking;","root","");
 $dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-$query="SELECT * FROM carowner WHERE email='$email'";
-
-$returnval=$dbcon->query($query);
-$info = $returnval->fetchAll();
-
-foreach ($info as $row){
-    $_SESSION['fn'] = $row['firstname'];
-    $_SESSION['ln'] = $row['lastname'];
-    $_SESSION['id'] = $row['id'];
-}
-$fn = $_SESSION['fn'];
-$ln = $_SESSION['ln'];
-$ownerid = $_SESSION['id'];
 
 ?>
 
@@ -108,14 +92,13 @@ $ownerid = $_SESSION['id'];
         <div class="container">
             <div class="ideas-container">
                 <div class="ideas-item abtxt">
-                    <div class="hero1-h1"> <span class="true "><?php echo $fn, " ", $ln; ?></span>
+                    <div class="hero1-h1">
                         <h1>
-                        Wellcome To  Your Profile
+                        Here is all the parking spots in our platform:
                         </h1>
                     </div>
 
-                    <p>Add your parking spot here</p>
-                    <button class="btn-grad1"><a href="parkingspace.html" class="hero1-btn mb-4">Add Parking Space</a></button>
+                
                     
                 </div>
                 <div class="ideas-item bc-img">
@@ -147,7 +130,7 @@ $ownerid = $_SESSION['id'];
 						<tbody>
 
                                 <?php
-                                $query1="SELECT * FROM parkingspace WHERE ownerid='$ownerid'";
+                                $query1="SELECT * FROM parkingspace";
 
                                 $returnval1=$dbcon->query($query1);
                                 $info1 = $returnval1->fetchAll();
@@ -169,7 +152,7 @@ $ownerid = $_SESSION['id'];
 									<td class="column3"><?php echo "House: ",$house, ", Road: ", $road1, $road2, ", Area: ",$area, ", District: ", $district;?></td>
 									<td class="column4"><?php echo $spacenum;?></td>
 									<td class="column5"><?php echo $rent;?></td>
-									<td class="column6"><?php echo "Buttons";?></td>
+									<td class="column6"><button>Edit</button></td>
 								</tr>
                                 <?php
                                 $no = $no+1;

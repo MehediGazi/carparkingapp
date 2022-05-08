@@ -34,7 +34,7 @@
 	
 
 				?>
-					<script>window.location.assign('home.php')</script>
+					<script>window.location.assign('carhome.php')</script>
 				<?php
 			} catch (PDOExpection $ex) {
 				?>

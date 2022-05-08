@@ -25,7 +25,7 @@
 
                     ?>
                         <script>
-                            window.location.assign('home.php');
+                            window.location.assign('carhome.php');
                         </script>
                     <?php
                 }
