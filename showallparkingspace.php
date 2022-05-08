@@ -152,7 +152,7 @@ $dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 									<td class="column3"><?php echo "House: ",$house, ", Road: ", $road1, $road2, ", Area: ",$area, ", District: ", $district;?></td>
 									<td class="column4"><?php echo $spacenum;?></td>
 									<td class="column5"><?php echo $rent;?></td>
-									<td class="column6"><button>Edit</button></td>
+									<td class="column6"><button>Book this spot</button></td>
 								</tr>
                                 <?php
                                 $no = $no+1;

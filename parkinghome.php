@@ -115,7 +115,7 @@ $ownerid = $_SESSION['id'];
                     </div>
 
                     <p>Add your parking spot here</p>
-                    <button class="btn-grad1"><a href="parkingspace.html" class="hero1-btn mb-4">Add Parking Space</a></button>
+                    <button class="btn-grad1"><a href="addparkingspace.html" class="hero1-btn mb-4">Add Parking Space</a></button>
                     
                 </div>
                 <div class="ideas-item bc-img">
