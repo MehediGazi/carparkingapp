@@ -112,11 +112,11 @@ $dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     </section>
 
 
-    <div class="limiter">
-		<div class="container-table100">
-			<div class="wrap-table100">
-				<div class="table100">
-					<table>
+   
+		
+			
+				
+					<table class="container">
 						<thead>
 							<tr class="table100-head">
 								<th class="column1">No</th>
@@ -152,7 +152,11 @@ $dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 									<td class="column3"><?php echo "House: ",$house, ", Road: ", $road1, $road2, ", Area: ",$area, ", District: ", $district;?></td>
 									<td class="column4"><?php echo $spacenum;?></td>
 									<td class="column5"><?php echo $rent;?></td>
+<<<<<<< HEAD
 									<td class="column6"><button>Book this spot</button></td>
+=======
+									<td class="column6"><button class="btn btn-info">Edit</button></td>
+>>>>>>> ac7293df2e48cbd704f541c6f4457bdae80bd93e
 								</tr>
                                 <?php
                                 $no = $no+1;
@@ -161,10 +165,10 @@ $dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	
 						</tbody>
 					</table>
-				</div>
-			</div>
-		</div>
-	</div>
+		
+		
+	
+
 
 
  

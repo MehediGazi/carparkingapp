@@ -120,7 +120,7 @@ $ownerid = $_SESSION['id'];
                 </div>
                 <div class="ideas-item bc-img">
 
-                    <img src="img/Rownok.png" style="margin-top: 120px;" alt="">
+                    <img src="img/Rownok.png" style="" alt="">
 
                 </div>
             </div>
@@ -129,10 +129,10 @@ $ownerid = $_SESSION['id'];
     </section>
 
 
-    <div class="limiter">
-		<div class="container-table100">
-			<div class="wrap-table100">
-				<div class="table100">
+    
+		
+		
+				<div class="table100 container">
 					<table>
 						<thead>
 							<tr class="table100-head">
@@ -169,7 +169,7 @@ $ownerid = $_SESSION['id'];
 									<td class="column3"><?php echo "House: ",$house, ", Road: ", $road1, $road2, ", Area: ",$area, ", District: ", $district;?></td>
 									<td class="column4"><?php echo $spacenum;?></td>
 									<td class="column5"><?php echo $rent;?></td>
-									<td class="column6"><button>Edit</button></td>
+									<td class="column6"><button class="btn btn-info">Edit</button></td>
 								</tr>
                                 <?php
                                 $no = $no+1;
@@ -179,9 +179,9 @@ $ownerid = $_SESSION['id'];
 						</tbody>
 					</table>
 				</div>
-			</div>
-		</div>
-	</div>
+		
+	
+	
 
 
  
