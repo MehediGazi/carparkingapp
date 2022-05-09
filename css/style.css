@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap');
@@ -1049,3 +1049,51 @@ background: linear-gradient(to top, #e7cdda 0%, #e7f3ea 100%);
 .footer a i:hover{
       color: #20d7dd;
 }
+
+
+.blogs .box{
+      width: 350px;
+      background: linear-gradient(to right,rgb(245, 255, 252),#edfaff);
+      box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+      backdrop-filter: blur( 20.0px );
+      -webkit-backdrop-filter: blur( 20.0px );
+      border-radius: 10px;
+      border: 5px solid rgba( 255, 255, 255, 0.18 );
+  }
+  .blogs .box .image{
+      height: 200px;
+      width: 100%;
+      border-radius: 5px;overflow: hidden;
+      background: #f8f8fe;
+  }
+  .blogs .box .image img{
+      transition:.2s linear;
+  }
+  
+  .blogs .box:hover .image img{
+      transform: scale(1.1);
+  }
+  .blogs .box .content .link-btn{
+      justify-content: center;
+      text-align: center;
+      display: block;
+      width: 140px;
+      margin: 0 auto;
+      padding: 5px;
+      background: linear-gradient(to right,#fdf,#daf4ff);
+  border-radius: 15px;
+  text-decoration: none;
+  margin-top: 20px;
+  }
+  .blogs .box .content h3{
+      padding: 5px 0;
+      font-size: 20px;
+  }
+  .blogs .box .content p{
+        margin-bottom:15px ;
+  }
+  .blogs .box .content  a {
+     text-decoration: none;
+     font-size: 20px;
+ 
+  }
