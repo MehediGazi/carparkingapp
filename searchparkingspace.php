@@ -112,73 +112,34 @@
         <div class="row d-flex justify-content-center">
           <div class="col-6 row d-flex justify-content-center card">
             <h3>Please Fill Parking Details</h3>
-            <form action="addparkingspace_process.php" , method="POST">
+            <form action="searchparkingspace_process.php" , method="POST">
               <div class="row d-flex justify-content-center">
                 <div class="col-xl-6 col-lg-12 col-md-12 inputBox">
                     <select class="cs-select cs-skin-elastic ", name="district">
                         <option value="" disabled selected>Select Your District</option>
                         <option class="option" value="Dhaka" data-class="element_1">Dhaka</option>
-                        <option value="Mirpur" data-class="element_2">Mirpur</option>
+                        <option value="Sylhet" data-class="element_2">Sylhet</option>
+                        <option value="Khulna" data-class="element_2">Khulna</option>
                      </select>
                 </div>
                 <div class="col-xl-6 col-lg-12 col-md-12 inputBox">
-                  <input type="text" placeholder="Parking Area" , name="area" />
+                    <select class="cs-select cs-skin-elastic ", name="area">
+                        <option value="" disabled selected>Select Your Area</option>
+                        <option class="option" value="Dhanmondi" data-class="element_1">Dhanmondi</option>
+                        <option value="Banani" data-class="element_2">Banani</option>
+                        <option value="Gulshan" data-class="element_2">Gulshan</option>
+                        <option value="Mohammadpur" data-class="element_2">Mohammadpur</option>
+                        <option value="Uttara" data-class="element_2">Uttara</option>
+                     </select>
                 </div>
               </div>
 
-              <div class="row d-flex justify-content-center">
-                <div class="col-xl-6 col-lg-12 col-md-12 inputBox">
-                  <input
-                    type="text"
-                    placeholder="Road-Number-1"
-                    ,
-                    name="road1"
-                  />
-                </div>
-                <div class="col-xl-6 col-lg-12 col-md-12 inputBox">
-                  <input
-                    type="text"
-                    placeholder="Road-Number-2"
-                    ,
-                    name="road2"
-                  />
-                </div>
-              </div>
-
-              <div class="row d-flex justify-content-center">
-                <div class="col-xl-6 col-lg-12 col-md-12 inputBox">
-                  <input type="text" placeholder="House-Number" , name="house" />
-                </div>
-                <div class="col-xl-6 col-lg-12 col-md-12 inputBox">
-                  <input
-                    type="text"
-                    placeholder="Parking Space Number"
-                    ,
-                    name="spacenum"
-                  />
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-xl-6 col-lg-12 col-md-12 inputBox">
-                  <input type="file" name="img" />
-                </div>
-
-                <div class="col-xl-6 col-lg-12 col-md-12">
-                  <div class="inputBox">
-                    <input
-                      type="password"
-                      placeholder="enter password"
-                      ,
-                      name="pass"
-                    />
-                  </div>
-                </div>
-              </div>
+    
+              
 
               <div class="row mt-4">
                 <div class="text-center col-12">
-                  <button class="btn-login">Submit</button>
+                  <button class="btn-login">Search</button>
                 </div>
               </div>
             </form>

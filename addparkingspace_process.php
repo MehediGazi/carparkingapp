@@ -11,20 +11,21 @@
 		$house = $_POST["house"];
 		$spacenum = $_POST["spacenum"];
 		$img = $_POST["img"];
+		$rent = $_POST["rent"];
 
 		try {
 
 			$dbcon = new PDO("mysql:host=localhost:3306;dbname=carparking;","root","");
 			$dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-			$quary = "INSERT INTO parkingspace(ownerid, district, area, road1, road2, house, spacenum, img) VALUES('$ownerid','$district','$area','$road1','$road2','$house','$spacenum','$img')";
+			$quary = "INSERT INTO parkingspace(ownerid, district, area, road1, road2, house, spacenum, img, rent) VALUES('$ownerid','$district','$area','$road1','$road2','$house','$spacenum','$img','$rent')";
 			echo $quary;
 
 			try {
 				
 				$dbcon->exec($quary);
 				?>
-					<script>window.location.assign('home.php')</script>
+					<script>window.location.assign('parkinghome.php')</script>
 				<?php
 			} catch (PDOExpection $ex) {
 				?>

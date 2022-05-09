@@ -1,3 +1,14 @@
+<?php
+$district = $_SESSION['district'];
+$area = $_SESSION['area'];
+$road1 = $_SESSION['road1'];
+$road2 = $_SESSION['road2'];
+$house = $_SESSION['house'];
+$spacenum = $_SESSION['spacenum'];
+$rent = $_SESSION['rent'];
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -112,17 +123,17 @@
         <div class="row d-flex justify-content-center">
           <div class="col-6 row d-flex justify-content-center card">
             <h3>Please Fill Parking Details</h3>
-            <form action="addparkingspace_process.php" , method="POST">
+            <form action="addparkingspace_process.php" , method="POST", enctype="multipart/form-data">
               <div class="row d-flex justify-content-center">
                 <div class="col-xl-6 col-lg-12 col-md-12 inputBox">
                     <select class="cs-select cs-skin-elastic ", name="district">
-                        <option value="" disabled selected>Select Your District</option>
+                        <option value="" disabled selected>Select Your Districtttt</option>
                         <option class="option" value="Dhaka" data-class="element_1">Dhaka</option>
                         <option value="Mirpur" data-class="element_2">Mirpur</option>
                      </select>
                 </div>
                 <div class="col-xl-6 col-lg-12 col-md-12 inputBox">
-                  <input type="text" placeholder="Parking Area" , name="area" />
+                  <?php echo '<input type="text", name="area", value="$area" />'; ?>
                 </div>
               </div>
 
@@ -167,10 +178,10 @@
                 <div class="col-xl-6 col-lg-12 col-md-12">
                   <div class="inputBox">
                     <input
-                      type="text"
-                      placeholder="Rent"
+                      type="password"
+                      placeholder="enter password"
                       ,
-                      name="rent"
+                      name="pass"
                     />
                   </div>
                 </div>

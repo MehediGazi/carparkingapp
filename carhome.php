@@ -116,6 +116,7 @@ $ownerid = $_SESSION['id'];
 
                     <p>Find a safe place to keep your car.</p>
                     <button class="btn-grad1"><a href="showallparkingspace.php" class="hero1-btn mb-4">View all parking space</a></button>
+                    <button class="btn-grad1"><a href="searchparkingspace.php" class="hero1-btn mb-4">Search parking space</a></button>
                     
                 </div>
                 <div class="ideas-item bc-img">

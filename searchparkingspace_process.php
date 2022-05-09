@@ -1,23 +1,7 @@
 <?php 
-session_start();
-$email = $_SESSION['email'];
-
+$area = $_POST['area'];
 $dbcon = new PDO("mysql:host=localhost:3306;dbname=carparking;","root","");
 $dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-$query="SELECT * FROM carowner WHERE email='$email'";
-
-$returnval=$dbcon->query($query);
-$info = $returnval->fetchAll();
-
-foreach ($info as $row){
-    $_SESSION['fn'] = $row['firstname'];
-    $_SESSION['ln'] = $row['lastname'];
-    $_SESSION['id'] = $row['id'];
-}
-$fn = $_SESSION['fn'];
-$ln = $_SESSION['ln'];
-$ownerid = $_SESSION['id'];
 
 ?>
 
@@ -108,19 +92,18 @@ $ownerid = $_SESSION['id'];
         <div class="container">
             <div class="ideas-container">
                 <div class="ideas-item abtxt">
-                    <div class="hero1-h1"> <span class="true "><?php echo $fn, " ", $ln; ?></span>
+                    <div class="hero1-h1">
                         <h1>
-                        Wellcome To  Your Profile
+                        Here is your search result:
                         </h1>
                     </div>
 
-                    <p>Add your parking spot here</p>
-                    <button class="btn-grad1"><a href="addparkingspace.html" class="hero1-btn mb-4">Add Parking Space</a></button>
+                
                     
                 </div>
                 <div class="ideas-item bc-img">
 
-                    <img src="img/Rownok.png" style="" alt="">
+                    <img src="img/Rownok.png" style="margin-top: 120px;" alt="">
 
                 </div>
             </div>
@@ -129,11 +112,11 @@ $ownerid = $_SESSION['id'];
     </section>
 
 
-    
+   
 		
-		
-				<div class="table100 container">
-					<table>
+			
+				
+					<table class="container">
 						<thead>
 							<tr class="table100-head">
 								<th class="column1">No</th>
@@ -147,7 +130,7 @@ $ownerid = $_SESSION['id'];
 						<tbody>
 
                                 <?php
-                                $query1="SELECT * FROM parkingspace WHERE ownerid='$ownerid'";
+                                $query1="SELECT * FROM parkingspace WHERE area = '$area'";
 
                                 $returnval1=$dbcon->query($query1);
                                 $info1 = $returnval1->fetchAll();
@@ -160,14 +143,6 @@ $ownerid = $_SESSION['id'];
                                     $house = $row1['house'];
                                     $spacenum = $row1['spacenum'];
                                     $rent = $row1['rent'];
-
-                                    $_SESSION['district'] = $district;
-                                    $_SESSION['area'] = $area;
-                                    $_SESSION['road1'] = $road1;
-                                    $_SESSION['road2'] = $road2;
-                                    $_SESSION['house'] = $house;
-                                    $_SESSION['spacenum'] = $spacenum;
-                                    $_SESSION['rent'] = $rent;
                                     
                                     ?>
 
@@ -177,7 +152,7 @@ $ownerid = $_SESSION['id'];
 									<td class="column3"><?php echo "House: ",$house, ", Road: ", $road1, $road2, ", Area: ",$area, ", District: ", $district;?></td>
 									<td class="column4"><?php echo $spacenum;?></td>
 									<td class="column5"><?php echo $rent;?></td>
-									<td class="column6"><a href = "updateparkingspace.php" class="btn btn-info" > Edit</a></td>
+									<td class="column6"><button class="btn btn-info">Book this spot</button></td>
 								</tr>
                                 <?php
                                 $no = $no+1;
@@ -186,10 +161,10 @@ $ownerid = $_SESSION['id'];
 	
 						</tbody>
 					</table>
-				</div>
+		
 		
 	
-	
+
 
 
  
