@@ -1,4 +1,6 @@
 <?php
+session_start();
+$road2 = "";
 $district = $_SESSION['district'];
 $area = $_SESSION['area'];
 $road1 = $_SESSION['road1'];
@@ -126,47 +128,44 @@ $rent = $_SESSION['rent'];
             <form action="addparkingspace_process.php" , method="POST", enctype="multipart/form-data">
               <div class="row d-flex justify-content-center">
                 <div class="col-xl-6 col-lg-12 col-md-12 inputBox">
-                    <select class="cs-select cs-skin-elastic ", name="district">
-                        <option value="" disabled selected>Select Your Districtttt</option>
+                    <?php echo "<select class='cs-select cs-skin-elastic', name='district', value='$district'>"; ?>
+                        <option value="" disabled selected>Select Your District</option>
                         <option class="option" value="Dhaka" data-class="element_1">Dhaka</option>
                         <option value="Mirpur" data-class="element_2">Mirpur</option>
                      </select>
                 </div>
                 <div class="col-xl-6 col-lg-12 col-md-12 inputBox">
-                  <?php echo '<input type="text", name="area", value="$area" />'; ?>
+                  <?php echo "<input type='text', name='area', value='$area' />"; ?>
                 </div>
               </div>
 
               <div class="row d-flex justify-content-center">
                 <div class="col-xl-6 col-lg-12 col-md-12 inputBox">
-                  <input
-                    type="text"
-                    placeholder="Road-Number-1"
-                    ,
-                    name="road1"
-                  />
+                <?php echo "<input type='text'
+                    name='road1', value='$road1'
+                  />"; ?>
                 </div>
                 <div class="col-xl-6 col-lg-12 col-md-12 inputBox">
-                  <input
-                    type="text"
-                    placeholder="Road-Number-2"
+                  <?php echo "<input
+                    type='text'
+                    value='$road2'
                     ,
-                    name="road2"
-                  />
+                    name='road2'
+                  />";?>
                 </div>
               </div>
 
               <div class="row d-flex justify-content-center">
                 <div class="col-xl-6 col-lg-12 col-md-12 inputBox">
-                  <input type="text" placeholder="House-Number" , name="house" />
+                  <?php echo "<input type='text' value='$house' , name='house' />";?>
                 </div>
                 <div class="col-xl-6 col-lg-12 col-md-12 inputBox">
-                  <input
-                    type="text"
-                    placeholder="Parking Space Number"
+                  <?php echo "<input
+                    type='text'
+                    value='$spacenum'
                     ,
-                    name="spacenum"
-                  />
+                    name='spacenum'
+                  />";?>
                 </div>
               </div>
 
