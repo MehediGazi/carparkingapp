@@ -1,13 +1,23 @@
 <?php
-session_start();
-$road2 = "";
-$district = $_SESSION['district'];
-$area = $_SESSION['area'];
-$road1 = $_SESSION['road1'];
-$road2 = $_SESSION['road2'];
-$house = $_SESSION['house'];
-$spacenum = $_SESSION['spacenum'];
-$rent = $_SESSION['rent'];
+$id = $_GET['id'];
+
+$dbcon = new PDO("mysql:host=localhost:3306;dbname=carparking;","root","");
+$dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+$query="SELECT * FROM parkingspace WHERE id='$id'";
+
+$returnval=$dbcon->query($query);
+$info = $returnval->fetchAll();
+
+foreach($info as $row1){
+  $district = $row1['district'];
+  $area = $row1['area'];
+  $road1 = $row1['road1'];
+  $road2 = $row1['road2'];
+  $house = $row1['house'];
+  $spacenum = $row1['spacenum'];
+  $rent = $row1['rent'];
+}
 ?>
 
 

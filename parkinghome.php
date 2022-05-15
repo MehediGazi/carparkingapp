@@ -142,6 +142,7 @@ $ownerid = $_SESSION['id'];
 								<th class="column4">Available Space</th>
 								<th class="column5">Rent</th>
 								<th class="column6">Actions</th>
+								<th class="column7">Image</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -160,15 +161,8 @@ $ownerid = $_SESSION['id'];
                                     $house = $row1['house'];
                                     $spacenum = $row1['spacenum'];
                                     $rent = $row1['rent'];
+                                    $img = $row1['img']
 
-                                    $_SESSION['district'] = $district;
-                                    $_SESSION['area'] = $area;
-                                    $_SESSION['road1'] = $road1;
-                                    $_SESSION['road2'] = $road2;
-                                    $_SESSION['house'] = $house;
-                                    $_SESSION['spacenum'] = $spacenum;
-                                    $_SESSION['rent'] = $rent;
-                                    
                                     ?>
 
                                     <tr>
@@ -177,10 +171,13 @@ $ownerid = $_SESSION['id'];
 									<td class="column3"><?php echo "House: ",$house, ", Road: ", $road1, $road2, ", Area: ",$area, ", District: ", $district;?></td>
 									<td class="column4"><?php echo $spacenum;?></td>
 									<td class="column5"><?php echo $rent;?></td>
-									<td class="column6"><a href = "updateparkingspace.php" class="btn btn-info" > Edit</a></td>
+									<td class="column6"><a href = "updateparkingspace.php?id=<?php echo $row1['id'] ?>" class="btn btn-info" > Edit</a></td>
+                                    <td class="column7"><img src="<?php echo $img; ?>" alt="Image not found" width="50" height="50"></td>
 								</tr>
+                                
                                 <?php
                                 $no = $no+1;
+                                echo "$img";
                                 }
                                 ?>
 	

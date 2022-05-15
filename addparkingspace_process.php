@@ -10,16 +10,21 @@
 		$road2 = $_POST["road2"];
 		$house = $_POST["house"];
 		$spacenum = $_POST["spacenum"];
-		$img = $_POST["img"];
 		$rent = $_POST["rent"];
+
+		if(isset($_FILES['imgfile']) && !empty($_FILES['imgfile'])){
+            $img=$_FILES["imgfile"];
+            move_uploaded_file($img['tmp_name'],"img/parking/$area$road1$house.jpg");
+            $imgurl = "img/parking/$area$road1$house.jpg";
+			echo "ok";
+        }
 
 		try {
 
 			$dbcon = new PDO("mysql:host=localhost:3306;dbname=carparking;","root","");
 			$dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-			$quary = "INSERT INTO parkingspace(ownerid, district, area, road1, road2, house, spacenum, img, rent) VALUES('$ownerid','$district','$area','$road1','$road2','$house','$spacenum','$img','$rent')";
-			echo $quary;
+			$quary = "INSERT INTO parkingspace(ownerid, district, area, road1, road2, house, spacenum, img, rent) VALUES('$ownerid','$district','$area','$road1','$road2','$house','$spacenum','$imgurl','$rent')";
 
 			try {
 				
