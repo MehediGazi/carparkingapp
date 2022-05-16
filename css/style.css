@@ -1085,6 +1085,14 @@ background: linear-gradient(to top, #e7cdda 0%, #e7f3ea 100%);
   text-decoration: none;
   margin-top: 20px;
   }
+  .blogs .box .content .link-btn:hover{
+      background: linear-gradient(to right,rgb(213, 247, 190),#ffdafe);
+      box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+      backdrop-filter: blur( 0px );
+      -webkit-backdrop-filter: blur( 0px );
+      border-radius: 10px;
+      border: 1px solid rgba( 255, 255, 255, 0.18 );
+  }
   .blogs .box .content h3{
       padding: 5px 0;
       font-size: 20px;
