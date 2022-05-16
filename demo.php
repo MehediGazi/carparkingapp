@@ -1,3 +1,11 @@
+<?php 
+$area = $_POST['area'];
+$dbcon = new PDO("mysql:host=localhost:3306;dbname=carparking;","root","");
+$dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -71,8 +79,8 @@
     <section class="blogs" id="blogs">
       <p class=" container font-weight-bold fs-2">Search Result</p>
       <div class="d-flex justify-content-around flex-wrap">
-        <div class="box p-3 m-2">
-          
+
+        <!-- <div class="box p-3 m-2">
           <div class="image">
             <img src="img/car 1.png" class="w-100 h-100" alt="" />
           </div>
@@ -84,7 +92,23 @@
             <a style="margin-top: 40px" href=""> 12$</a>
             <a href="" class="link-btn font-weight-bold">Book Now</a>
           </div>
-        </div>
+        </div> -->
+        <?php
+          $query1="SELECT * FROM parkingspace WHERE area = '$area'";
+
+          $returnval1=$dbcon->query($query1);
+          $info1 = $returnval1->fetchAll();
+          $no = 1;
+          foreach($info1 as $row1){
+              $district = $row1['district'];
+              $area = $row1['area'];
+              $road1 = $row1['road1'];
+              $road2 = $row1['road2'];
+              $house = $row1['house'];
+              $spacenum = $row1['spacenum'];
+              $rent = $row1['rent'];
+              
+              ?>
 
         <div class="box p-3 m-2">
             <div class="image">
@@ -99,8 +123,12 @@
               <a href="" class="link-btn font-weight-bold">Book Now</a>
             </div>
           </div>
+          <?php
+            $no = $no+1;
+            }
+          ?>
 
-          <div class="box p-3 m-2">
+          <!--<div class="box p-3 m-2">
             <div class="image">
               <img src="img/car 1.png" class="w-100 h-100" alt="" />
             </div>
@@ -112,7 +140,7 @@
               <a style="margin-top: 40px" href=""> 12$</a>
               <a href="" class="link-btn font-weight-bold">Book Now</a>
             </div>
-          </div>
+          </div>-->
       </div>
     </section>
 

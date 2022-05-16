@@ -1,5 +1,7 @@
 <?php
 $id = $_GET['id'];
+session_start();
+$_SESSION['spotid'] = $id;
 
 $dbcon = new PDO("mysql:host=localhost:3306;dbname=carparking;","root","");
 $dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -134,28 +136,28 @@ foreach($info as $row1){
       <div class="container">
         <div class="row d-flex justify-content-center">
           <div class="col-6 row d-flex justify-content-center card">
-            <h3>Please Fill Parking Details</h3>
-            <form action="addparkingspace_process.php" , method="POST", enctype="multipart/form-data">
+            <h3>Please Fill Parking Detailsss</h3>
+            <form action="updateparkingspace_process.php", method="POST", enctype="multipart/form-data">
               <div class="row d-flex justify-content-center">
                 <div class="col-xl-6 col-lg-12 col-md-12 inputBox">
-                    <?php echo "<select class='cs-select cs-skin-elastic', name='district', value='$district'>"; ?>
-                        <option value="" disabled selected>Select Your District</option>
-                        <option class="option" value="Dhaka" data-class="element_1">Dhaka</option>
-                        <option value="Mirpur" data-class="element_2">Mirpur</option>
-                     </select>
+                <h6> District:</h6>
+                  <?php echo "<input type='text', name='district', value='$district' />"; ?>
                 </div>
                 <div class="col-xl-6 col-lg-12 col-md-12 inputBox">
+                  <h6> Area:</h6>
                   <?php echo "<input type='text', name='area', value='$area' />"; ?>
                 </div>
               </div>
 
               <div class="row d-flex justify-content-center">
                 <div class="col-xl-6 col-lg-12 col-md-12 inputBox">
+                <h6>Road-1:</h6>
                 <?php echo "<input type='text'
                     name='road1', value='$road1'
                   />"; ?>
                 </div>
                 <div class="col-xl-6 col-lg-12 col-md-12 inputBox">
+                <h6>Road-2:</h6>
                   <?php echo "<input
                     type='text'
                     value='$road2'
@@ -167,9 +169,11 @@ foreach($info as $row1){
 
               <div class="row d-flex justify-content-center">
                 <div class="col-xl-6 col-lg-12 col-md-12 inputBox">
+                <h6>House:</h6>
                   <?php echo "<input type='text' value='$house' , name='house' />";?>
                 </div>
                 <div class="col-xl-6 col-lg-12 col-md-12 inputBox">
+                <h6>Number of Space:</h6>
                   <?php echo "<input
                     type='text'
                     value='$spacenum'
@@ -181,17 +185,19 @@ foreach($info as $row1){
 
               <div class="row">
                 <div class="col-xl-6 col-lg-12 col-md-12 inputBox">
-                  <input type="file" name="img" />
+                <h6>Image:</h6>
+                  <input type="file" name="imgfile"/>
                 </div>
 
                 <div class="col-xl-6 col-lg-12 col-md-12">
                   <div class="inputBox">
-                    <input
-                      type="password"
-                      placeholder="enter password"
-                      ,
-                      name="pass"
-                    />
+                  <h6>Rent:</h6>
+                  <?php echo "<input
+                    type='text'
+                    value='$rent'
+                    ,
+                    name='rent'
+                  />";?>
                   </div>
                 </div>
               </div>
