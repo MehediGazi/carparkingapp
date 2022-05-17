@@ -94,7 +94,7 @@ $dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
           </div>
         </div> -->
         <?php
-          $query1="SELECT * FROM parkingspace WHERE area = '$area'";
+          $query1="SELECT * FROM parkingspace WHERE area = '$area' ORDER BY road1 ASC";
 
           $returnval1=$dbcon->query($query1);
           $info1 = $returnval1->fetchAll();

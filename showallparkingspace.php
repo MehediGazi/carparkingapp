@@ -116,53 +116,78 @@ $dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		
 			
 				
-					<table class="container">
-						<thead>
-							<tr class="table100-head">
-								<th class="column1">No</th>
-								<th class="column2">Area</th>
-								<th class="column3">Address</th>
-								<th class="column4">Available Space</th>
-								<th class="column5">Rent</th>
-								<th class="column6">Actions</th>
-							</tr>
-						</thead>
-						<tbody>
+    <section class="blogs" id="blogs">
+      <p class=" container font-weight-bold fs-2">Search Result</p>
+      <div class="d-flex justify-content-around flex-wrap">
 
-                                <?php
-                                $query1="SELECT * FROM parkingspace";
+        <!-- <div class="box p-3 m-2">
+          <div class="image">
+            <img src="img/car 1.png" class="w-100 h-100" alt="" />
+          </div>
+          <div class="content p-2 text-center">
+            <h3>Mohommodpur</h3>
 
-                                $returnval1=$dbcon->query($query1);
-                                $info1 = $returnval1->fetchAll();
-                                $no = 1;
-                                foreach($info1 as $row1){
-                                    $district = $row1['district'];
-                                    $area = $row1['area'];
-                                    $road1 = $row1['road1'];
-                                    $road2 = $row1['road2'];
-                                    $house = $row1['house'];
-                                    $spacenum = $row1['spacenum'];
-                                    $rent = $row1['rent'];
-                                    
-                                    ?>
+            <p class="">House no 20 mohommodpur dhaka</p>
 
-                                    <tr>
-									<td class="column1"><?php echo $no;?></td>
-									<td class="column2"><?php echo $area;?></td>
-									<td class="column3"><?php echo "House: ",$house, ", Road: ", $road1, $road2, ", Area: ",$area, ", District: ", $district;?></td>
-									<td class="column4"><?php echo $spacenum;?></td>
-									<td class="column5"><?php echo $rent;?></td>
-									<td class="column6"><button class="btn btn-info">Book this spot</button></td>
-								</tr>
-                                <?php
-                                $no = $no+1;
-                                }
-                                ?>
-	
-						</tbody>
-					</table>
-		
-		
+            <a style="margin-top: 40px" href=""> 12$</a>
+            <a href="" class="link-btn font-weight-bold">Book Now</a>
+          </div>
+        </div> -->
+        <?php
+          $query1="SELECT * FROM parkingspace ORDER BY area ASC";
+
+          $returnval1=$dbcon->query($query1);
+          $info1 = $returnval1->fetchAll();
+          $no = 1;
+          foreach($info1 as $row1){
+              $district = $row1['district'];
+              $area = $row1['area'];
+              $road1 = $row1['road1'];
+              $road2 = $row1['road2'];
+              $house = $row1['house'];
+              $spacenum = $row1['spacenum'];
+              $rent = $row1['rent'];
+              $img = $row1['img'];
+              if($img == ""){
+                $img = "img/parking/default.jpeg";
+              }
+              
+              ?>
+
+        <div class="box p-3 m-2">
+            <div class="image">
+              <img src="<?php echo $img;?>" class="w-100 h-100 img-thumbnail" alt="Image not found" />
+            </div>
+            <div class="content p-2 text-center">
+              <h3><?php echo $area;?></h3>
+  
+              <p class=""><?php echo "House: ",$house, ", Road: ", $road1, $road2, ", Area: ",$area, " District: ", $district;?></p>
+  
+              <a style="margin-top: 40px" href=""><?php echo $rent, ' Taka/Hour';?></a>
+              <a href="" class="link-btn font-weight-bold">Book Now</a>
+            </div>
+          </div>
+          <?php
+            $no = $no+1;
+            }
+          ?>
+
+          <!-- <div class="box p-3 m-2">
+            <div class="image">
+              <img src="img/car 1.png" class="w-100 h-100" alt="" />
+            </div>
+            <div class="content p-2 text-center">
+              <h3>Mohommodpur</h3>
+  
+              <p class="">House no 2000 mohommodpur dhaka</p>
+  
+              <a style="margin-top: 40px" href=""> 12$</a>
+              <a href="" class="link-btn font-weight-bold">Book Now</a>
+            </div>
+          </div> -->
+      </div>
+    </section>
+
 	
 
 

@@ -204,9 +204,13 @@ foreach($info as $row1){
 
               <div class="row mt-4">
                 <div class="text-center col-12">
-                  <button class="btn-login">Submit</button>
+                  <button class="btn-login">Update</button>
+                  <button class="btn-login"><a href = "deleteparkingspace.php?id=<?php echo $id ?>">Delete</a></button>
+                  
+                  
                 </div>
               </div>
+          
             </form>
           </div>
           <div class="col-6 img fluid text-center">

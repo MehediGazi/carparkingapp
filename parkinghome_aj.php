@@ -1,4 +1,7 @@
-<?php 
+<?php
+session_start();
+$email = $_SESSION['email'];
+/* 
 session_start();
 $email = $_SESSION['email'];
 
@@ -19,7 +22,21 @@ $fn = $_SESSION['fn'];
 $ln = $_SESSION['ln'];
 $ownerid = $_SESSION['id'];
 
+*/
 ?>
+
+<p id="content"></p>
+
+<script type="text/javascript">
+    //let n=prompt("Please enter a id:");
+    fetch('http://localhost/carparking/parkinghome_ajex.php?email=<?php echo $email;?>')
+    .then(response => response.json())
+    .then(json=> {
+    document.getElementById("content").innerHTML= json.email;
+    })
+</script>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -127,51 +144,71 @@ $ownerid = $_SESSION['id'];
         </div>
 
     </section>
+
+
+    
 		
-				
-    <section class="blogs" id="blogs">
-      <p class=" container font-weight-bold fs-2">Your Parking Spaces</p>
-      <div class="d-flex justify-content-around flex-wrap">
-        <?php
-          $query1="SELECT * FROM parkingspace WHERE ownerid = '$ownerid' ORDER BY area ASC";
+		
+				<div class="table100 container">
+					<table>
+						<thead>
+							<tr class="table100-head">
+								<th class="column1">No</th>
+								<th class="column2">Area</th>
+								<th class="column3">Address</th>
+								<th class="column4">Available Space</th>
+								<th class="column5">Rent</th>
+								<th class="column6">Actions</th>
+								<th class="column7">Image</th>
+							</tr>
+						</thead>
+						<tbody>
 
-          $returnval1=$dbcon->query($query1);
-          $info1 = $returnval1->fetchAll();
-          $no = 1;
-          foreach($info1 as $row1){
-              $district = $row1['district'];
-              $area = $row1['area'];
-              $road1 = $row1['road1'];
-              $road2 = $row1['road2'];
-              $house = $row1['house'];
-              $spacenum = $row1['spacenum'];
-              $rent = $row1['rent'];
-              $img = $row1['img'];
-              if($img == ""){
-                $img = "img/parking/default.jpeg";
-              }
-              
-              ?>
+                                <?php
+                                $query1="SELECT * FROM parkingspace WHERE ownerid='$ownerid'";
 
-        <div class="box p-3 m-2">
-            <div class="image">
-              <img src="<?php echo $img;?>" class="w-100 h-100 img-thumbnail" alt="Image not found" />
-            </div>
-            <div class="content p-2 text-center">
-              <h3><?php echo $area;?></h3>
-  
-              <p class=""><?php echo "House: ",$house, ", Road: ", $road1, $road2, ", ",$area, ", ", $district;?></p>
-  
-              <a style="margin-top: 40px" href=""><?php echo $rent, ' Taka/Hour';?></a>
-              <a href = "updateparkingspace.php?id=<?php echo $row1['id'] ?>" class="link-btn font-weight-bold">Edit</a>
-            </div>
-          </div>
-          <?php
-            $no = $no+1;
-            }
-          ?>
-      </div>
-    </section>	
+                                $returnval1=$dbcon->query($query1);
+                                $info1 = $returnval1->fetchAll();
+                                $no = 1;
+                                foreach($info1 as $row1){
+                                    $district = $row1['district'];
+                                    $area = $row1['area'];
+                                    $road1 = $row1['road1'];
+                                    $road2 = $row1['road2'];
+                                    $house = $row1['house'];
+                                    $spacenum = $row1['spacenum'];
+                                    $rent = $row1['rent'];
+                                    $img = $row1['img']
+
+                                    ?>
+
+                                    <tr>
+									<td class="column1"><?php echo $no;?></td>
+									<td class="column2"><?php echo $area;?></td>
+									<td class="column3"><?php echo "House: ",$house, ", Road: ", $road1, $road2, ", Area: ",$area, ", District: ", $district;?></td>
+									<td class="column4"><?php echo $spacenum;?></td>
+									<td class="column5"><?php echo $rent;?></td>
+									<td class="column6"><a href = "updateparkingspace.php?id=<?php echo $row1['id'] ?>" class="btn btn-info" > Edit</a></td>
+                                    <td class="column7"><img src="<?php echo $img; ?>" alt="Image not found" width="50" height="50"></td>
+								</tr>
+                                
+                                <?php
+                                $no = $no+1;
+                                }
+                                ?>
+	
+						</tbody>
+					</table>
+				</div>
+		
+	
+	
+
+
+ 
+
+    <!-- footer area -->
+
 
     <section class="footer">
         <div class="container">
