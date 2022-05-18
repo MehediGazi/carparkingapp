@@ -1,9 +1,6 @@
 <?php   
     session_start();
     $email = $_SESSION['email'];
-    /* 
-    session_start();
-    $email = $_SESSION['email'];
 
     $dbcon = new PDO("mysql:host=localhost:3306;dbname=carparking;","root","");
     $dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -21,12 +18,37 @@
     $fn = $_SESSION['fn'];
     $ln = $_SESSION['ln'];
     $ownerid = $_SESSION['id'];
-
-    */
 ?>
 
-<p id="content"></p>
+<script>
+    var ajax = new XMLHttpRequest();
+    ajax.open("GET", "parkinghome_ajax.php?id=<?php echo $ownerid;?>", true);
+    ajax.send();
+ 
+    ajax.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var data = JSON.parse(this.responseText);
+            console.log(data);
+ 
+            var html = "";
+            for(var a = 0; a < data.length; a++) {
+                var firstName = data[a].firstname;
+                var lastName = data[a].lastname;
+                var ownerid = data[a].id;
+                var name = firstName + " " + lastName;
+ 
+                html += "<tr>";
+                    html += "<td>" + firstName + "</td>";
+                    html += "<td>" + lastName + "</td>";
+                html += "</tr>";
+            }
+            document.getElementById("data").innerHTML = name;
+        }
+    };
+</script>
 
+
+<!--
 <script type="text/javascript">
     //let n=prompt("Please enter a id:");
     fetch('http://localhost/carparking/parkinghome_ajex.php?email=<?php echo $email;?>')    
@@ -35,6 +57,7 @@
     document.getElementById("content").innerHTML= json.email;
     })
 </script>
+-->
 
 
 
@@ -107,10 +130,6 @@
                             </li>
                             <li><a href="about.html">Logout</a></li>
                         </ul>
-
-                    
-                     
-                        
                        
                     </ul>
                     <label for="menu-btn" class="btn menu-btn"> <i class="fas fa-bars"></i> </label>
@@ -125,7 +144,7 @@
         <div class="container">
             <div class="ideas-container">
                 <div class="ideas-item abtxt">
-                    <div class="hero1-h1"> <span class="true "><?php echo $fn, " ", $ln; ?></span>
+                    <div class="hero1-h1"> <span class="true " id="data"></span>
                         <h1>
                         Wellcome To  Your Profile
                         </h1>

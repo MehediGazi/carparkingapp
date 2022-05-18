@@ -21,6 +21,33 @@ $ownerid = $_SESSION['id'];
 
 ?>
 
+<script>
+    var ajax = new XMLHttpRequest();
+    ajax.open("GET", "parkinghome_ajax.php?id=<?php echo $ownerid;?>", true);
+    ajax.send();
+ 
+    ajax.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var data = JSON.parse(this.responseText);
+            console.log(data);
+ 
+            var html = "";
+            for(var a = 0; a < data.length; a++) {
+                var firstName = data[a].firstname;
+                var lastName = data[a].lastname;
+                var ownerid = data[a].id;
+                var name = firstName + " " + lastName;
+ 
+                html += "<tr>";
+                    html += "<td>" + firstName + "</td>";
+                    html += "<td>" + lastName + "</td>";
+                html += "</tr>";
+            }
+            document.getElementById("data").innerHTML = name;
+        }
+    };
+</script>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -108,19 +135,18 @@ $ownerid = $_SESSION['id'];
         <div class="container">
             <div class="ideas-container">
                 <div class="ideas-item abtxt">
-                    <div class="hero1-h1"> <span class="true "><?php echo $fn, " ", $ln; ?></span>
+                    <div class="hero1-h1"> <span class="true " id="data"></span>
                         <h1>
                         Wellcome To  Your Profile
                         </h1>
                     </div>
 
-                    <p>Add your parking spot here</p>
                     <button class="btn-grad1"><a href="addparkingspace.html" class="hero1-btn mb-4">Add Parking Space</a></button>
                     
                 </div>
                 <div class="ideas-item bc-img">
 
-                    <img src="img/Rownok.png" style="" alt="">
+                    <!-- <img src="img/Rownok.png" style="" alt=""> -->
 
                 </div>
             </div>
