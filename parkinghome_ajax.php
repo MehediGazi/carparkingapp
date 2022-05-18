@@ -9,7 +9,7 @@
         $status = 'ERROR';
         $content = mysqli_connect_error();
     }
-    $query = "SELECT * FROM `parkingowner` WHERE email = `$email2";
+    $query = "SELECT * FROM parkingowner WHERE email = '$email2'";
     if ($result = mysqli_query($link, $query)) {
         /* fetch associative array */
         while ($row = mysqli_fetch_assoc($result)) {

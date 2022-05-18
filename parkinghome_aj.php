@@ -1,35 +1,35 @@
-<?php
-session_start();
-$email = $_SESSION['email'];
-/* 
-session_start();
-$email = $_SESSION['email'];
+<?php   
+    session_start();
+    $email = $_SESSION['email'];
+    /* 
+    session_start();
+    $email = $_SESSION['email'];
 
-$dbcon = new PDO("mysql:host=localhost:3306;dbname=carparking;","root","");
-$dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $dbcon = new PDO("mysql:host=localhost:3306;dbname=carparking;","root","");
+    $dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$query="SELECT * FROM carowner WHERE email='$email'";
+    $query="SELECT * FROM carowner WHERE email='$email'";
 
-$returnval=$dbcon->query($query);
-$info = $returnval->fetchAll();
+    $returnval=$dbcon->query($query);
+    $info = $returnval->fetchAll();
 
-foreach ($info as $row){
-    $_SESSION['fn'] = $row['firstname'];
-    $_SESSION['ln'] = $row['lastname'];
-    $_SESSION['id'] = $row['id'];
-}
-$fn = $_SESSION['fn'];
-$ln = $_SESSION['ln'];
-$ownerid = $_SESSION['id'];
+    foreach ($info as $row){
+        $_SESSION['fn'] = $row['firstname'];
+        $_SESSION['ln'] = $row['lastname'];
+        $_SESSION['id'] = $row['id'];
+    }
+    $fn = $_SESSION['fn'];
+    $ln = $_SESSION['ln'];
+    $ownerid = $_SESSION['id'];
 
-*/
+    */
 ?>
 
 <p id="content"></p>
 
 <script type="text/javascript">
     //let n=prompt("Please enter a id:");
-    fetch('http://localhost/carparking/parkinghome_ajex.php?email=<?php echo $email;?>')
+    fetch('http://localhost/carparking/parkinghome_ajex.php?email=<?php echo $email;?>')    
     .then(response => response.json())
     .then(json=> {
     document.getElementById("content").innerHTML= json.email;
