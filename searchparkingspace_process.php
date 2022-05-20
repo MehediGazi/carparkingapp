@@ -76,9 +76,26 @@ $dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                       <p>Seo Optimization</p>
                   </a>
               </div>
-              
+              <div class="col-lg-4 col-md-12 col-sm-12">
+                  <h4 class="text-center text-uppercase">company</h4>
+                  <a class="text-center text-capitalize text-decoration-none" href="">
+                      <p>about us </p>
+                  </a>
+                  <a class="text-center text-capitalize text-decoration-none" href="">
+                      <p>How it works </p>
+                  </a>
+                  <a class="text-center text-capitalize text-decoration-none" href="">
+                      <p>packages </p>
+                  </a>
+                  <a class="text-center text-capitalize text-decoration-none" href="">
+                      <p>Graphic design </p>
+                  </a>
+                  <a class="text-center text-capitalize text-decoration-none" href="">
+                      <p>Seo Optimization </p>
+                  </a>
 
               </div>
+              
           </div>
           <hr>
     
