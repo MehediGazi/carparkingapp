@@ -36,6 +36,12 @@
 			}
 			
 		}
+		catch (PDOExpection $ex) {
+			?>
+					<script>window.location.assign('signup.php')</script>
+			<?php
+		}
+	       
 	else{
 			?>
 				<script>window.location.assign('signup.php')</script>
