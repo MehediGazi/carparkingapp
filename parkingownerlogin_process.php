@@ -26,38 +26,5 @@
                         </script>
                     <?php
                 }
-                else{
-
-                    ?>
-                        <script>
-                            window.location.assign('carownerlogin.html');
-                            window.alert("Wrong Login Information. Try Again");
-                        </script>
-                    <?php
-                }
-            }
-            catch(PDOException $ex){
-                ?>
-                    <script>
-                        window.location.assign('signin.php');
-                    </script>
-                <?php
-            }
-        }
-        catch(PDOException $ex){
-            ?>
-                <script>
-                    window.location.assign('cus_login.php');
-                </script>
-            <?php
-        }
-        
-    }
-    else{
-        ?>
-            <script>
-                window.location.assign('cus_login.php');
-            </script>
-        <?php
-    }
+         
 ?>
