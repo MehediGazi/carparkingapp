@@ -103,6 +103,36 @@ $ownerid = $_SESSION['id'];
     </header>
 
 
+    <!-- hero section -->
+    <section class="bc">
+        <div class="container">
+            <div class="ideas-container">
+                <div class="ideas-item abtxt">
+                    <div class="hero1-h1"> <span class="true "><?php echo $fn, " ", $ln; ?></span>
+                        <h1>
+                        Wellcome To  Your Profile
+                        </h1>
+                    </div>
+
+                    <p>Find a safe place to keep your car.</p>
+                    <button class="btn-grad1"><a href="showallparkingspace.php" class="hero1-btn mb-4">View all parking space</a></button>
+                    <button class="btn-grad1"><a href="searchparkingspace.php" class="hero1-btn mb-4">Search parking space</a></button>
+                    
+                </div>
+                <div class="ideas-item bc-img">
+
+                    <img src="img/Rownok.png" style="margin-top: 120px;" alt="">
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <div class="limiter">
+		
+	</div>
 
 
  
@@ -130,44 +160,7 @@ $ownerid = $_SESSION['id'];
                     <a class="text-center text-capitalize text-decoration-none" href="">
                         <p>Seo Optimization</p>
                     </a>
-                </div>
-                <div class="col-lg-4 col-md-12 col-sm-12">
-                    <h4 class="text-center text-uppercase">company</h4>
-                    <a class="text-center text-capitalize text-decoration-none" href="">
-                        <p>about us </p>
-                    </a>
-                    <a class="text-center text-capitalize text-decoration-none" href="">
-                        <p>How it works </p>
-                    </a>
-                    <a class="text-center text-capitalize text-decoration-none" href="">
-                        <p>packages </p>
-                    </a>
-                    <a class="text-center text-capitalize text-decoration-none" href="">
-                        <p>Graphic design </p>
-                    </a>
-                    <a class="text-center text-capitalize text-decoration-none" href="">
-                        <p>Seo Optimization </p>
-                    </a>
-
-                </div>
-                <div class="col-lg-4 col-md-12 col-sm-12">
-                    <h4 class="text-center text-uppercase">about</h4>
-                    <a class="text-center text-capitalize text-decoration-none" href="">
-                        <p>sajib405cse@gmail.com</p>
-                    </a>
-                    <a class="text-center text-capitalize text-decoration-none" href="">
-                        <p>Address : Dhaka , United City , Madani Avenue</p>
-                    </a>
-                    <a class="text-center text-capitalize text-decoration-none" href="">
-                        <p>Dhaka 1212 </p>
-                    </a>
-                    <h4 class="text-center text-uppercase">Follow Us</h4>
-                    <div class="text-center p-2">
-                        <a href=""> <i class="fab fa-facebook"></i></a>
-                        <a href=""> <i class="fab fa-instagram"></i></a>
-                        <a href=""> <i class="fab fa-dribbble"></i></a>
-                        <a href=""> <i class="fab fa-twitter"></i></a>
-
+                
                     </div>
 
                 </div>
