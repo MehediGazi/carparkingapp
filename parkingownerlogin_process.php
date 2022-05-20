@@ -13,7 +13,17 @@
 
             $query="SELECT email FROM parkingowner WHERE email='$email' and pass='$pass'";
             
-            
+            try{
+                $returnval=$dbcon->query($query);
+               
+            catch(PDOException $ex){
+                ?>
+                    <script>
+                        window.location.assign('signin.php');
+                    </script>
+                <?php
+            }
+        }
         catch(PDOException $ex){
             ?>
                 <script>
