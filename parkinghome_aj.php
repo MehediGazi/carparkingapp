@@ -20,6 +20,8 @@
     $ownerid = $_SESSION['id'];
 ?>
 
+<!-- -->
+
 <script>
     var ajax = new XMLHttpRequest();
     ajax.open("GET", "parkinghome_ajax.php?id=<?php echo $ownerid;?>", true);
