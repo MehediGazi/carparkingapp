@@ -1,25 +1,29 @@
 <?php 
 session_start();
 $email = $_SESSION['email'];
-
-$dbcon = new PDO("mysql:host=localhost:3306;dbname=carparking;","root","");
-$dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-$query="SELECT * FROM carowner WHERE email='$email'";
-
-$returnval=$dbcon->query($query);
-$info = $returnval->fetchAll();
-
-foreach ($info as $row){
-    $_SESSION['fn'] = $row['firstname'];
-    $_SESSION['ln'] = $row['lastname'];
-    $_SESSION['id'] = $row['id'];
-}
-$fn = $_SESSION['fn'];
-$ln = $_SESSION['ln'];
-$ownerid = $_SESSION['id'];
-
 ?>
+
+<script>
+    var ajax = new XMLHttpRequest();
+    ajax.open("GET", "carhome_ajax.php?email=<?php echo $email;?>", true);
+    ajax.send();
+ 
+    ajax.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var data = JSON.parse(this.responseText);
+            console.log(data);
+ 
+            for(var a = 0; a < data.length; a++) {
+                var firstName = data[a].firstname;
+                var lastName = data[a].lastname;
+                var ownerid = data[a].id;
+                var name = firstName + " " + lastName;
+            }
+            document.getElementById("data").innerHTML = name;
+        }
+    };
+</script>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -108,7 +112,7 @@ $ownerid = $_SESSION['id'];
         <div class="container">
             <div class="ideas-container">
                 <div class="ideas-item abtxt">
-                    <div class="hero1-h1"> <span class="true "><?php echo $fn, " ", $ln; ?></span>
+                    <div class="hero1-h1"> <span class="true " id = "data"></span>
                         <h1>
                         Wellcome To  Your Profile
                         </h1>
@@ -121,7 +125,7 @@ $ownerid = $_SESSION['id'];
                 </div>
                 <div class="ideas-item bc-img">
 
-                    <img src="img/Rownok.png" style="margin-top: 120px;" alt="">
+                    <!-- <img src="img/Rownok.png" style="margin-top: 120px;" alt=""> -->
 
                 </div>
             </div>
