@@ -20,33 +20,10 @@ if( isset($_POST['fn']) && isset($_POST['ln']) && isset($_POST['email']) && isse
 		$quary = "INSERT INTO carowner(firstname, lastname, gender, email, pass, phone, car) VALUES('$fn','$ln','$gender','$email','$pass','$phone','$car')";
 		echo $quary;
 
-		try {
-			
-			$dbcon->exec($quary);
-
-			session_start();
-				
-			$_SESSION['email']=$email;
-
-
-			$_SESSION['fn'] = $fn;
-			$_SESSION['ln'] = $ln;
-
-
-			?>
-				<script>window.location.assign('carhome.php')</script>
-			<?php
-		} catch (PDOExpection $ex) {
-			?>
-				<script>window.location.assign('signup.php')</script>
-			<?php
-		}
 		
-	} catch (PDOExpection $ex) {
-		?>
-				<script>window.location.assign('signup.php')</script>
-		<?php
-	}
+		
+	} 
+	
 }else{
 		?>
 			<script>window.location.assign('signup.php')</script>
