@@ -48,15 +48,30 @@ $dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     <title>Document</title>
   </head>
   <body>
-        
+        <!-- animations -->
+      
+          <!-- <div class="box p-3 m-2">
+            <div class="image">
+              <img src="img/car 1.png" class="w-100 h-100" alt="" />
+            </div>
+            <div class="content p-2 text-center">
+              <h3>Mohommodpur</h3>
   
+              <p class="">House no 2000 mohommodpur dhaka</p>
+  
+              <a style="margin-top: 40px" href=""> 12$</a>
+              <a href="" class="link-btn font-weight-bold">Book Now</a>
+            </div>
+          </div> -->
       </div>
     </section>
 
     
     <!-- footer area -->
-  <section class="footer">
-  <div class="container">
+
+
+    <section class="footer">
+      <div class="container">
           <div class="row">
               <div class="col-lg-4 col-md-12 col-sm-12">
                   <h4 class="text-center text-uppercase">services</h4>
@@ -114,11 +129,11 @@ $dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                       <a href=""> <i class="fab fa-twitter"></i></a>
 
                   </div>
-              
 
-              </div>  
+              </div>
           </div>
           <hr>
+
           <div class="row">
               <div class="col-lg-6 col-md-12 col-sm-12">
                   <h4 class="text-start text-uppercase mt-5">we accept</h4>
@@ -138,7 +153,6 @@ $dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
               </div>
           </div>
       </div>
-    
 
   </section>
   </body>
