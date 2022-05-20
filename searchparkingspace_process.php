@@ -55,8 +55,32 @@ $dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     
     <!-- footer area -->
+  <section class="footer">
+  <div class="container">
+          <div class="row">
+              <div class="col-lg-4 col-md-12 col-sm-12">
+                  <h4 class="text-center text-uppercase">services</h4>
+                  <a class="text-center text-capitalize text-decoration-none" href="">
+                      <p>website Design </p>
+                  </a>
+                  <a class="text-center text-capitalize text-decoration-none" href="">
+                      <p>Wordpress Development</p>
+                  </a>
+                  <a class="text-center text-capitalize text-decoration-none" href="">
+                      <p>Mobile App Development</p>
+                  </a>
+                  <a class="text-center text-capitalize text-decoration-none" href="">
+                      <p>Graphic design</p>
+                  </a>
+                  <a class="text-center text-capitalize text-decoration-none" href="">
+                      <p>Seo Optimization</p>
+                  </a>
+              </div>
+              
 
-
+              </div>
+          </div>
+          <hr>
     
 
   </section>
