@@ -160,7 +160,27 @@ $ownerid = $_SESSION['id'];
                     <a class="text-center text-capitalize text-decoration-none" href="">
                         <p>Seo Optimization</p>
                     </a>
+                </div>
                 
+                </div>
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                    <h4 class="text-center text-uppercase">about</h4>
+                    <a class="text-center text-capitalize text-decoration-none" href="">
+                        <p>sajib405cse@gmail.com</p>
+                    </a>
+                    <a class="text-center text-capitalize text-decoration-none" href="">
+                        <p>Address : Dhaka , United City , Madani Avenue</p>
+                    </a>
+                    <a class="text-center text-capitalize text-decoration-none" href="">
+                        <p>Dhaka 1212 </p>
+                    </a>
+                    <h4 class="text-center text-uppercase">Follow Us</h4>
+                    <div class="text-center p-2">
+                        <a href=""> <i class="fab fa-facebook"></i></a>
+                        <a href=""> <i class="fab fa-instagram"></i></a>
+                        <a href=""> <i class="fab fa-dribbble"></i></a>
+                        <a href=""> <i class="fab fa-twitter"></i></a>
+
                     </div>
 
                 </div>
