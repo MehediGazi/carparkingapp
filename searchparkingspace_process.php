@@ -48,21 +48,8 @@ $dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     <title>Document</title>
   </head>
   <body>
-        <!-- animations -->
-      
-          <!-- <div class="box p-3 m-2">
-            <div class="image">
-              <img src="img/car 1.png" class="w-100 h-100" alt="" />
-            </div>
-            <div class="content p-2 text-center">
-              <h3>Mohommodpur</h3>
+        
   
-              <p class="">House no 2000 mohommodpur dhaka</p>
-  
-              <a style="margin-top: 40px" href=""> 12$</a>
-              <a href="" class="link-btn font-weight-bold">Book Now</a>
-            </div>
-          </div> -->
       </div>
     </section>
 
@@ -70,89 +57,7 @@ $dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     <!-- footer area -->
 
 
-    <section class="footer">
-      <div class="container">
-          <div class="row">
-              <div class="col-lg-4 col-md-12 col-sm-12">
-                  <h4 class="text-center text-uppercase">services</h4>
-                  <a class="text-center text-capitalize text-decoration-none" href="">
-                      <p>website Design </p>
-                  </a>
-                  <a class="text-center text-capitalize text-decoration-none" href="">
-                      <p>Wordpress Development</p>
-                  </a>
-                  <a class="text-center text-capitalize text-decoration-none" href="">
-                      <p>Mobile App Development</p>
-                  </a>
-                  <a class="text-center text-capitalize text-decoration-none" href="">
-                      <p>Graphic design</p>
-                  </a>
-                  <a class="text-center text-capitalize text-decoration-none" href="">
-                      <p>Seo Optimization</p>
-                  </a>
-              </div>
-              <div class="col-lg-4 col-md-12 col-sm-12">
-                  <h4 class="text-center text-uppercase">company</h4>
-                  <a class="text-center text-capitalize text-decoration-none" href="">
-                      <p>about us </p>
-                  </a>
-                  <a class="text-center text-capitalize text-decoration-none" href="">
-                      <p>How it works </p>
-                  </a>
-                  <a class="text-center text-capitalize text-decoration-none" href="">
-                      <p>packages </p>
-                  </a>
-                  <a class="text-center text-capitalize text-decoration-none" href="">
-                      <p>Graphic design </p>
-                  </a>
-                  <a class="text-center text-capitalize text-decoration-none" href="">
-                      <p>Seo Optimization </p>
-                  </a>
-
-              </div>
-              <div class="col-lg-4 col-md-12 col-sm-12">
-                  <h4 class="text-center text-uppercase">about</h4>
-                  <a class="text-center text-capitalize text-decoration-none" href="">
-                      <p>info.romaxdev@gmail.com</p>
-                  </a>
-                  <a class="text-center text-capitalize text-decoration-none" href="">
-                      <p>Address Dhaka United City Madani Avenue</p>
-                  </a>
-                  <a class="text-center text-capitalize text-decoration-none" href="">
-                      <p>Dhaka 1212 </p>
-                  </a>
-                  <h4 class="text-center text-uppercase">Follow Us</h4>
-                  <div class="text-center p-2">
-                      <a href=""> <i class="fab fa-facebook"></i></a>
-                      <a href=""> <i class="fab fa-instagram"></i></a>
-                      <a href=""> <i class="fab fa-dribbble"></i></a>
-                      <a href=""> <i class="fab fa-twitter"></i></a>
-
-                  </div>
-
-              </div>
-          </div>
-          <hr>
-
-          <div class="row">
-              <div class="col-lg-6 col-md-12 col-sm-12">
-                  <h4 class="text-start text-uppercase mt-5">we accept</h4>
-              </div>
-              <div class="col-lg-6 col-md-12 col-sm-12 text-end">
-                  <img class="img-fluid" style="width: 100px; height: 100px; margin-top: 10px; padding-right:10px" src="img/bekash.png" alt="">
-                  <img class="img-fluid" style="width: 100px; height: 100px; margin-top: 10px; padding-right:10px" src="img/nogod.png" alt="">
-                  <img class="img-fluid" style="width: 100px; height: 100px; margin-top: 10px; padding-right:10px" src="img/payonner.png" alt="">
-              </div>
-          </div>
-          <div class="row">
-              <div class="col-lg-6 col-md-12 col-xl-6 col-xxl-6 col-sm-12 text-secondary row d-flex align-self-end">
-                  <p>all @copyright reserved to Romaxdev</p>
-              </div>
-              <div class="col-lg-6 col-md-12 col-xl-6 col-xxl-6 col-sm-12 text-secondary text-end">
-                  <p>made by <a class="text-capitalize text-decoration-none" href="https://www.facebook.com/rownokmahbub/">Mehbubur Rahman Rownok</a> </p>
-              </div>
-          </div>
-      </div>
+    
 
   </section>
   </body>
