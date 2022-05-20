@@ -22,7 +22,11 @@ if( isset($_POST['fn']) && isset($_POST['ln']) && isset($_POST['email']) && isse
 
 		
 		
-	} 
+	} catch (PDOExpection $ex) {
+		?>
+				<script>window.location.assign('signup.php')</script>
+		<?php
+	}
 	
 }else{
 		?>
