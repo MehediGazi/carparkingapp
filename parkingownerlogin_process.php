@@ -15,7 +15,27 @@
             
             try{
                 $returnval=$dbcon->query($query);
-               
+                if($returnval->rowCount()==1){
+
+                    session_start();
+                    
+                    $_SESSION['email']=$email;
+                    ?>
+                        <script>
+                            window.location.assign('home.html');
+                        </script>
+                    <?php
+                }
+                else{
+
+                    ?>
+                        <script>
+                            window.location.assign('carownerlogin.html');
+                            window.alert("Wrong Login Information. Try Again");
+                        </script>
+                    <?php
+                }
+            }
             catch(PDOException $ex){
                 ?>
                     <script>
