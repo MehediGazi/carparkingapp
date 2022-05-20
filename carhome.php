@@ -52,7 +52,41 @@ $ownerid = $_SESSION['id'];
 
 <body>
     <!-- animations -->
-  
+    <header class="header">
+        <nav class=" fixed-top ">
+            
+
+
+    <!-- hero section -->
+    <section class="bc">
+        <div class="container">
+            <div class="ideas-container">
+                <div class="ideas-item abtxt">
+                    <div class="hero1-h1"> <span class="true "><?php echo $fn, " ", $ln; ?></span>
+                        <h1>
+                        Wellcome To  Your Profile
+                        </h1>
+                    </div>
+
+                    <p>Find a safe place to keep your car.</p>
+                    <button class="btn-grad1"><a href="showallparkingspace.php" class="hero1-btn mb-4">View all parking space</a></button>
+                    <button class="btn-grad1"><a href="searchparkingspace.php" class="hero1-btn mb-4">Search parking space</a></button>
+                    
+                </div>
+                <div class="ideas-item bc-img">
+
+                    <img src="img/Rownok.png" style="margin-top: 120px;" alt="">
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <div class="limiter">
+		
+	</div>
 
 
  
