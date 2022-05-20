@@ -19,10 +19,14 @@
             $imgurl = "img/parking/$area$road1$house.jpg";
 			echo "ok";
         }
-		$dbcon = new PDO("mysql:host=localhost:3306;dbname=carparking;","root","");
+
+		try {
+
+			$dbcon = new PDO("mysql:host=localhost:3306;dbname=carparking;","root","");
 			$dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 			$quary = "INSERT INTO parkingspace(ownerid, district, area, road1, road2, house, spacenum, img, rent) VALUES('$ownerid','$district','$area','$road1','$road2','$house','$spacenum','$imgurl','$rent')";
+
 			try {
 				
 				$dbcon->exec($quary);
@@ -35,14 +39,12 @@
 				<?php
 			}
 			
-		}
-		catch (PDOExpection $ex) {
+		} catch (PDOExpection $ex) {
 			?>
 					<script>window.location.assign('signup.php')</script>
 			<?php
 		}
-	       
-	else{
+	}else{
 			?>
 				<script>window.location.assign('signup.php')</script>
 			<?php
