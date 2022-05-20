@@ -13,8 +13,7 @@
 
             $query="SELECT email FROM parkingowner WHERE email='$email' and pass='$pass'";
             
-           
-        }
+            
         catch(PDOException $ex){
             ?>
                 <script>
