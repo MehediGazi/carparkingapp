@@ -168,6 +168,10 @@ $dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
               <a href="" class="link-btn font-weight-bold">Book Now</a>
             </div>
           </div>
+          <?php
+            $no = $no+1;
+            }
+          ?>
          
 
           <!-- <div class="box p-3 m-2">
