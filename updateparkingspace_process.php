@@ -12,6 +12,13 @@
 		$spacenum = $_POST["spacenum"];
 		$rent = $_POST["rent"];
 
+		if(isset($_FILES['imgfile']) && !empty($_FILES['imgfile'])){
+            $img=$_FILES["imgfile"];
+            move_uploaded_file($img['tmp_name'],"img/parking/$area$road1$house.jpg");
+            $imgurl = "img/parking/$area$road1$house.jpg";
+			echo "okkkkkkk";
+        }
+
 		 
 
 		 
