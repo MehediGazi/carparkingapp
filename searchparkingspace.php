@@ -97,6 +97,60 @@
                 <li><a href="about.html">Logout</a></li>
               </ul>
             </ul>
+            
+            <label for="menu-btn" class="btn menu-btn">
+              <i class="fas fa-bars"></i>
+            </label>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- hero section -->
+    <section class="news-latter">
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+          <div class="col-6 row d-flex justify-content-center card">
+            <h3>Please Fill Parking Details</h3>
+            <form action="searchparkingspace_process.php" , method="POST">
+              <div class="row d-flex justify-content-center">
+                <div class="col-xl-6 col-lg-12 col-md-12 inputBox">
+                    <select class="cs-select cs-skin-elastic ", name="district">
+                        <option value="" disabled selected>Select Your District</option>
+                        <option class="option" value="Dhaka" data-class="element_1">Dhaka</option>
+                        <option value="Sylhet" data-class="element_2">Sylhet</option>
+                        <option value="Khulna" data-class="element_2">Khulna</option>
+                     </select>
+                </div>
+                <div class="col-xl-6 col-lg-12 col-md-12 inputBox">
+                    <select class="cs-select cs-skin-elastic ", name="area">
+                        <option value="" disabled selected>Select Your Area</option>
+                        <option class="option" value="Dhanmondi" data-class="element_1">Dhanmondi</option>
+                        <option value="Banani" data-class="element_2">Banani</option>
+                        <option value="Gulshan" data-class="element_2">Gulshan</option>
+                        <option value="Mohammadpur" data-class="element_2">Mohammadpur</option>
+                        <option value="Uttara" data-class="element_2">Uttara</option>
+                     </select>
+                </div>
+              </div>
+
+    
+              
+
+              <div class="row mt-4">
+                <div class="text-center col-12">
+                  <button class="btn-login">Search</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-6 img fluid text-center">
+            <img class="img-fluid" src="img/parkingcar1.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- footer area -->
 
     <section class="footer">
