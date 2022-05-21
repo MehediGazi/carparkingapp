@@ -18,6 +18,7 @@
             $imgurl = "img/parking/$area$road1$house.jpg";
 			echo "okkkkkkk";
         }
+
 		try {
 
 			$dbcon = new PDO("mysql:host=localhost:3306;dbname=carparking;","root","");
@@ -39,10 +40,9 @@
 			
 		} catch (PDOExpection $ex) {
 			?>
-					<script>window.loction.assign('signup2.php')</script>
+					<script>window.location.assign('signup2.php')</script>
 			<?php
 		}
-		 
 	}else{
 			?>
 				<script>window.location.assign('signup3.php')</script>
