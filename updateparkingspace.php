@@ -164,6 +164,59 @@ foreach($info as $row1){
                   />";?>
                 </div>
               </div>
+              <div class="row d-flex justify-content-center">
+                <div class="col-xl-6 col-lg-12 col-md-12 inputBox">
+                <h6>House:</h6>
+                  <?php echo "<input type='text' value='$house' , name='house' />";?>
+                </div>
+                <div class="col-xl-6 col-lg-12 col-md-12 inputBox">
+                <h6>Number of Space:</h6>
+                  <?php echo "<input
+                    type='text'
+                    value='$spacenum'
+                    ,
+                    name='spacenum'
+                  />";?>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-xl-6 col-lg-12 col-md-12 inputBox">
+                <h6>Image:</h6>
+                  <input type="file" name="imgfile"/>
+                </div>
+
+                <div class="col-xl-6 col-lg-12 col-md-12">
+                  <div class="inputBox">
+                  <h6>Rent:</h6>
+                  <?php echo "<input
+                    type='text'
+                    value='$rent'
+                    ,
+                    name='rent'
+                  />";?>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mt-4">
+                <div class="text-center col-12">
+                  <button class="btn-login">Update</button>
+                  <button class="btn-login"><a href = "deleteparkingspace.php?id=<?php echo $id ?>">Delete</a></button>
+                  
+                  
+                </div>
+              </div>
+          
+            </form>
+          </div>
+          <div class="col-6 img fluid text-center">
+            <img class="img-fluid" src="img/parkingcar1.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
 
 
     <!-- footer area -->
