@@ -31,7 +31,7 @@
 				
 				$dbcon->exec($quary);
 				?>
-					<script>window.location.assign('parkinghome.php')</script>
+					<script>window.location.assign('parkingowner_all_spaces.php')</script>
 				<?php
 			} catch (PDOExpection $ex) {
 				?>
