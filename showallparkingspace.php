@@ -133,26 +133,7 @@ $dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             <a href="" class="link-btn font-weight-bold">Book Now</a>
           </div>
         </div> -->
-        <?php
-          $query1="SELECT * FROM parkingspace ORDER BY area ASC";
-
-          $returnval1=$dbcon->query($query1);
-          $info1 = $returnval1->fetchAll();
-          $no = 1;
-          foreach($info1 as $row1){
-              $district = $row1['district'];
-              $area = $row1['area'];
-              $road1 = $row1['road1'];
-              $road2 = $row1['road2'];
-              $house = $row1['house'];
-              $spacenum = $row1['spacenum'];
-              $rent = $row1['rent'];
-              $img = $row1['img'];
-              if($img == ""){
-                $img = "img/parking/default.jpeg";
-              }
-              
-              ?>
+        
 
         <div class="box p-3 m-2">
             <div class="image">
@@ -167,10 +148,7 @@ $dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
               <a href="" class="link-btn font-weight-bold">Book Now</a>
             </div>
           </div>
-          <?php
-            $no = $no+1;
-            }
-          ?>
+         
 
           <!-- <div class="box p-3 m-2">
             <div class="image">
