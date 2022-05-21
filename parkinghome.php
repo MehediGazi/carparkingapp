@@ -1,4 +1,26 @@
 
+    <?php 
+session_start();
+$email = $_SESSION['email'];
+
+$dbcon = new PDO("mysql:host=localhost:3306;dbname=carparking;","root","");
+$dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+$query="SELECT * FROM carowner WHERE email='$email'";
+
+$returnval=$dbcon->query($query);
+$info = $returnval->fetchAll();
+
+foreach ($info as $row){
+    $_SESSION['fn'] = $row['firstname'];
+    $_SESSION['ln'] = $row['lastname'];
+    $_SESSION['id'] = $row['id'];
+}
+$fn = $_SESSION['fn'];
+$ln = $_SESSION['ln'];
+$ownerid = $_SESSION['id'];
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
