@@ -129,6 +129,42 @@ foreach($info as $row1){
         </div>
       </nav>
     </header>
+    <!-- hero section -->
+    <section class="news-latter">
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+          <div class="col-6 row d-flex justify-content-center card">
+            <h3>Please Fill Parking Detailsss</h3>
+            <form action="updateparkingspace_process.php", method="POST", enctype="multipart/form-data">
+              <div class="row d-flex justify-content-center">
+                <div class="col-xl-6 col-lg-12 col-md-12 inputBox">
+                <h6> District:</h6>
+                  <?php echo "<input type='text', name='district', value='$district' />"; ?>
+                </div>
+                <div class="col-xl-6 col-lg-12 col-md-12 inputBox">
+                  <h6> Area:</h6>
+                  <?php echo "<input type='text', name='area', value='$area' />"; ?>
+                </div>
+              </div>
+
+              <div class="row d-flex justify-content-center">
+                <div class="col-xl-6 col-lg-12 col-md-12 inputBox">
+                <h6>Road-1:</h6>
+                <?php echo "<input type='text'
+                    name='road1', value='$road1'
+                  />"; ?>
+                </div>
+                <div class="col-xl-6 col-lg-12 col-md-12 inputBox">
+                <h6>Road-2:</h6>
+                  <?php echo "<input
+                    type='text'
+                    value='$road2'
+                    ,
+                    name='road2'
+                  />";?>
+                </div>
+              </div>
+
 
     <!-- footer area -->
 
