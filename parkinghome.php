@@ -1,26 +1,28 @@
-
-    <?php 
+<?php 
 session_start();
 $email = $_SESSION['email'];
-
-$dbcon = new PDO("mysql:host=localhost:3306;dbname=carparking;","root","");
-$dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-$query="SELECT * FROM carowner WHERE email='$email'";
-
-$returnval=$dbcon->query($query);
-$info = $returnval->fetchAll();
-
-foreach ($info as $row){
-    $_SESSION['fn'] = $row['firstname'];
-    $_SESSION['ln'] = $row['lastname'];
-    $_SESSION['id'] = $row['id'];
-}
-$fn = $_SESSION['fn'];
-$ln = $_SESSION['ln'];
-$ownerid = $_SESSION['id'];
-
 ?>
+
+<script>
+    var ajax = new XMLHttpRequest();
+    ajax.open("GET", "parkinghome_ajax.php?email=<?php echo $email;?>", true);
+    ajax.send();
+ 
+    ajax.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var data = JSON.parse(this.responseText);
+            console.log(data);
+ 
+            for(var a = 0; a < data.length; a++) {
+                var firstName = data[a].firstname;
+                var lastName = data[a].lastname;
+                var ownerid = data[a].id;
+                var name = firstName + " " + lastName;
+            }
+            document.getElementById("data").innerHTML = name;
+        }
+    };
+</script>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -115,6 +117,7 @@ $ownerid = $_SESSION['id'];
                         </h1>
                     </div>
 
+                    <button class="btn-grad1"><a href="parkingowner_all_spaces.php" class="hero1-btn mb-4">View Your Parking Space</a></button>
                     <button class="btn-grad1"><a href="addparkingspace.html" class="hero1-btn mb-4">Add Parking Space</a></button>
                     
                 </div>
@@ -127,51 +130,6 @@ $ownerid = $_SESSION['id'];
         </div>
 
     </section>
-		
-				
-    <section class="blogs" id="blogs">
-      <p class=" container font-weight-bold fs-2">Your Parking Spaces</p>
-      <div class="d-flex justify-content-around flex-wrap">
-        <?php
-          $query1="SELECT * FROM parkingspace WHERE ownerid = '$ownerid' ORDER BY area ASC";
-
-          $returnval1=$dbcon->query($query1);
-          $info1 = $returnval1->fetchAll();
-          $no = 1;
-          foreach($info1 as $row1){
-              $district = $row1['district'];
-              $area = $row1['area'];
-              $road1 = $row1['road1'];
-              $road2 = $row1['road2'];
-              $house = $row1['house'];
-              $spacenum = $row1['spacenum'];
-              $rent = $row1['rent'];
-              $img = $row1['img'];
-              if($img == ""){
-                $img = "img/parking/default.jpeg";
-              }
-              
-              ?>
-
-        <div class="box p-3 m-2">
-            <div class="image">
-              <img src="<?php echo $img;?>" class="w-100 h-100 img-thumbnail" alt="Image not found" />
-            </div>
-            <div class="content p-2 text-center">
-              <h3><?php echo $area;?></h3>
-  
-              <p class=""><?php echo "House: ",$house, ", Road: ", $road1, $road2, ", ",$area, ", ", $district;?></p>
-  
-              <a style="margin-top: 40px" href=""><?php echo $rent, ' Taka/Hour';?></a>
-              <a href = "updateparkingspace.php?id=<?php echo $row1['id'] ?>" class="link-btn font-weight-bold">Edit</a>
-            </div>
-          </div>
-          <?php
-            $no = $no+1;
-            }
-          ?>
-      </div>
-    </section>	
 
     <section class="footer">
         <div class="container">
