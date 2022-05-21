@@ -18,9 +18,30 @@
             $imgurl = "img/parking/$area$road1$house.jpg";
 			echo "okkkkkkk";
         }
+		try {
 
-		 
+			$dbcon = new PDO("mysql:host=localhost:3306;dbname=carparking;","root","");
+			$dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+			$quary = "UPDATE parkingspace SET ownerid='$ownerid',area='$area',road1='$road1',road2='$road2',house='$house',spacenum='$spacenum',img='$imgurl',rent='$rent' WHERE id = '$spotid'";
+
+			try {
+				
+				$dbcon->exec($quary);
+				?>
+					<script>window.location.assign('parkinghome.php')</script>
+				<?php
+			} catch (PDOExpection $ex) {
+				?>
+					<script>window.location.assign('signup1.php')</script>
+				<?php
+			}
+			
+		} catch (PDOExpection $ex) {
+			?>
+					<script>window.loction.assign('signup2.php')</script>
+			<?php
+		}
 		 
 	}else{
 			?>
