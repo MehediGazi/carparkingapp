@@ -96,7 +96,6 @@ foreach($info as $row1){
                 <label for="cancel-btn" class="btn cancel-btn">
                   <i class="fas fa-times"></i>
                 </label>
-
                 <li>
                   <a href="" class="desktop-item"
                     >Profile
@@ -130,7 +129,6 @@ foreach($info as $row1){
         </div>
       </nav>
     </header>
-
     <!-- hero section -->
     <section class="news-latter">
       <div class="container">
@@ -166,7 +164,6 @@ foreach($info as $row1){
                   />";?>
                 </div>
               </div>
-
               <div class="row d-flex justify-content-center">
                 <div class="col-xl-6 col-lg-12 col-md-12 inputBox">
                 <h6>House:</h6>
@@ -219,6 +216,8 @@ foreach($info as $row1){
         </div>
       </div>
     </section>
+
+
 
     <!-- footer area -->
 

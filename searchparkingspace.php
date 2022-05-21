@@ -71,7 +71,6 @@
                 <label for="cancel-btn" class="btn cancel-btn">
                   <i class="fas fa-times"></i>
                 </label>
-
                 <li>
                   <a href="" class="desktop-item"
                     >Profile
@@ -98,6 +97,7 @@
                 <li><a href="about.html">Logout</a></li>
               </ul>
             </ul>
+            
             <label for="menu-btn" class="btn menu-btn">
               <i class="fas fa-bars"></i>
             </label>
