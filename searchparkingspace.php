@@ -50,7 +50,27 @@
 
   <body>
     <!-- animations -->
-
+    <header class="header">
+      <nav class="fixed-top">
+        <div class="container">
+          <div
+            class="wrapper d-flex align-items-center justify-content-between"
+          >
+            <div class="logo d-flex align-items-center mb-0 mb-md-3">
+              <img
+                style="width: 100px; height: 50px; margin-left: -10px"
+                src="img/carlogo.png"
+                alt=""
+              />
+              <span class="mt-2 text-uppercase">Garir Bari</span>
+            </div>
+            <input type="radio" name="slide" id="menu-btn" />
+            <input type="radio" name="slide" id="cancel-btn" />
+            <ul class="nav-links">
+              <ul class="nav-links">
+                <label for="cancel-btn" class="btn cancel-btn">
+                  <i class="fas fa-times"></i>
+                </label>
     <!-- footer area -->
 
     <section class="footer">
