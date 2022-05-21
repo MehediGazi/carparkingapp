@@ -157,14 +157,12 @@ $dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         <div class="box p-3 m-2">
             <div class="image">
-              <img src="<?php echo $img;?>" class="w-100 h-100 img-thumbnail" alt="Image not found" />
+              
+            
             </div>
             <div class="content p-2 text-center">
-              <h3><?php echo $area;?></h3>
-  
-              <p class=""><?php echo "House: ",$house, ", Road: ", $road1, $road2, ", Area: ",$area, " District: ", $district;?></p>
-  
-              <a style="margin-top: 40px" href=""><?php echo $rent, ' Taka/Hour';?></a>
+              
+            
               <a href="" class="link-btn font-weight-bold">Book Now</a>
             </div>
           </div>
