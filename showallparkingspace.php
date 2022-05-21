@@ -153,7 +153,6 @@ $dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
               }
               
               ?>
-        
 
         <div class="box p-3 m-2">
             <div class="image">
@@ -172,7 +171,6 @@ $dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $no = $no+1;
             }
           ?>
-         
 
           <!-- <div class="box p-3 m-2">
             <div class="image">
