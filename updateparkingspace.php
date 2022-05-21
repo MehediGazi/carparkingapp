@@ -96,6 +96,39 @@ foreach($info as $row1){
                 <label for="cancel-btn" class="btn cancel-btn">
                   <i class="fas fa-times"></i>
                 </label>
+                <li>
+                  <a href="" class="desktop-item"
+                    >Profile
+                    <i
+                      class="fas fa-chevron-down"
+                      id="arrowDown"
+                      style="font-size: 18px"
+                    ></i>
+                  </a>
+                  <input type="checkbox" id="showMega" />
+                  <label for="showMega" class="mobile-item"
+                    >Profile
+                    <i class="fas fa-chevron-down" style="font-size: 18px"></i>
+                  </label>
+                  <div class="mega-box">
+                    <div class="content">
+                      <ul class="mega-links">
+                        <li><a href="website.html">View</a></li>
+                        <li><a href="wordpress.html">Edit Profile</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li><a href="about.html">Logout</a></li>
+              </ul>
+            </ul>
+            <label for="menu-btn" class="btn menu-btn">
+              <i class="fas fa-bars"></i>
+            </label>
+          </div>
+        </div>
+      </nav>
+    </header>
 
     <!-- footer area -->
 
