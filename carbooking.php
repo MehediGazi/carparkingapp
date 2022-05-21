@@ -1,3 +1,8 @@
+<?php
+session_start();
+$_SESSION['parkingid'] = $_GET['parkingid'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -112,9 +117,9 @@
         <div class="row d-flex justify-content-center">
           <div class="col-6 row d-flex justify-content-center card">
             <h3>Please Enter the Number Plate of Your Car</h3>
-            <form action="searchparkingspace_process.php" , method="POST">
+            <form action="carbooking_process.php" , method="POST">
               <div class="row d-flex justify-content-center">
-                <div class="col-xl-6 col-lg-12 col-md-12 inputBox"">
+                <div class="col-xl-6 col-lg-12 col-md-12 inputBox">
                      <input type="text" placeholder="Car Number", name="carno">
                 </div>
               </div>

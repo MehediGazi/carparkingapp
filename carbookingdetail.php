@@ -1,10 +1,3 @@
-<?php 
-
-$dbcon = new PDO("mysql:host=localhost:3306;dbname=carparking;","root","");
-$dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,14 +6,9 @@ $dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- fonts -->
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
     <!-- bootstrap cdn -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <!-- font awsome cdn  -->
@@ -32,6 +20,41 @@ $dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <title>GarirBari</title>
+    <style>
+        body{
+            font-family: 'Bree Serif', serif;
+        }
+        .blogs{
+          
+      margin-top: 0px;
+      background: linear-gradient(to top,rgb(245, 255, 252),#e7f3ea);
+}
+        .bg-gd{
+            background: linear-gradient(to right, #fbc2eb 0%, #a6c1ee 51%, #fbc2eb 100%);
+        }
+     
+        .link-btn {
+
+  padding: 10px 20px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+ /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
+  box-shadow: 0 0 20px #eee;
+  border-radius: 15px;
+  background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
+  text-decoration: none;
+ }
+
+ .link-btn:hover {
+  background-position: right center;
+  color: black; /* change the direction of the change here */
+}
+
+
+    </style>
 </head>
 
 <body>
@@ -73,11 +96,7 @@ $dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                                 </div>
                             </li>
                             <li><a href="about.html">Logout</a></li>
-                        </ul>
-
-                    
-                     
-                        
+                        </ul>  
                        
                     </ul>
                     <label for="menu-btn" class="btn menu-btn"> <i class="fas fa-bars"></i> </label>
@@ -86,117 +105,120 @@ $dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         </nav>
     </header>
 
+<?php
+    $bid = $_GET['bid'];
 
-    <!-- hero section -->
-    <section class="bc">
-        <div class="container">
-            <div class="ideas-container">
-                <div class="ideas-item abtxt">
-                    <div class="hero1-h1">
-                        <h1>
-                        Here is all the parking spots in our platform:
-                        </h1>
-                    </div>
+    $dbcon = new PDO("mysql:host=localhost:3306;dbname=carparking;","root","");
+    $dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                
-                    
-                </div>
-                <div class="ideas-item bc-img">
 
-                    <img src="img/Rownok.png" style="margin-top: 120px;" alt="">
+    $query1="SELECT * FROM bookingdetail WHERE bid = '$bid'";
 
-                </div>
+    $returnval1=$dbcon->query($query1);
+    $info1 = $returnval1->fetchAll();
+
+    foreach($info1 as $row1){
+        $parkingid = $row1['parkingid'];
+        $carno = $row1['corno'];
+        $bookingtime = $row1['bookingtime'];
+        $checkin = $row1['checkin'];
+        $checkintime = $row1['checkintime'];
+        $checkout = $row1['checkout'];
+        $checkouttime = $row1['checkouttime'];
+        $bill = $row1['bill'];
+        $paid = $row1['paid'];
+
+        ?>
+        <script>
+            var ajax = new XMLHttpRequest();
+            ajax.open("GET", "carbookingdetail_ajax.php?parkingid=<?php echo $parkingid;?>", true);
+            ajax.send();
+        
+            ajax.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var data = JSON.parse(this.responseText);
+                    console.log(data);
+        
+                    for(var a = 0; a < data.length; a++) {
+                        var area = data[a].area;
+                        var road1 = data[a].road1;
+                        var road2 = data[a].road2;
+                        var house = data[a].house;
+                        var spacenum = data[a].spacenum;
+                        var rent = data[a].rent;
+                        var img = data[a].img;
+                    }
+                    document.getElementById("area").innerHTML = area;
+                    document.getElementById("road1").innerHTML = road1;
+                    document.getElementById("road2").innerHTML = road2;
+                    document.getElementById("house").innerHTML = house;
+                    document.getElementById("spacenum").innerHTML = spacenum;
+                    document.getElementById("rent").innerHTML = rent;
+                    document.getElementById("img").innerHTML = img;
+                }
+            };
+        </script>
+        <?php
+    }
+?>	
+				
+    <section class="blogs" id="blogs">
+      <p class=" container font-weight-bold fs-4 text-center">Booking Details</p>
+      <div class=" container col-4 flex justify-content-center align-items-center mx-auto border-secondary p-4 rounded-3 shadow-lg">
+      <img class="w-100  text-center ratio ratio-1x1" style="margin-bottom: 10px;" src="./img/parking.jpg" alt="">
+        <div class="row flex justify-content-center align-items-center">
+            <div class="col-6 bg-gd border-right-1 border border-2 ">
+                <h4>Area</h4>
+            </div>
+            <div class="col-6 bg-gd border-right-1 border border-2 ">
+                <h4 id="area"></h4>
             </div>
         </div>
 
-    </section>
-
-
-   
-		
-			
-				
-    <section class="blogs" id="blogs">
-      <p class=" container font-weight-bold fs-2">Search Result</p>
-      <div class="d-flex justify-content-around flex-wrap">
-
-        <!-- <div class="box p-3 m-2">
-          <div class="image">
-            <img src="img/car 1.png" class="w-100 h-100" alt="" />
-          </div>
-          <div class="content p-2 text-center">
-            <h3>Mohommodpur</h3>
-
-            <p class="">House no 20 mohommodpur dhaka</p>
-
-            <a style="margin-top: 40px" href=""> 12$</a>
-            <a href="" class="link-btn font-weight-bold">Book Now</a>
-          </div>
-        </div> -->
-        <?php
-        $query1="SELECT * FROM parkingspace ORDER BY area ASC";
-
-        $returnval1=$dbcon->query($query1);
-        $info1 = $returnval1->fetchAll();
-        $no = 1;
-        foreach($info1 as $row1){
-            
-            $district = $row1['district'];
-            $area = $row1['area'];
-            $road1 = $row1['road1'];
-            $road2 = $row1['road2'];
-            $house = $row1['house'];
-            $spacenum = $row1['spacenum'];
-            $rent = $row1['rent'];
-            $img = $row1['img'];
-            if($img == ""){
-            $img = "img/parking/default.jpeg";
-        }
-              
-              ?>
-
-        <div class="box p-3 m-2">
-            <div class="image">
-              <img src="<?php echo $img;?>" class="w-100 h-100 img-thumbnail" alt="Image not found" />
+        <div class="row flex justify-content-center align-items-center">
+            <div class="col-6 bg-gd border-right-1 border border-2 ">
+                <h4>Rent</h4>
             </div>
-            <div class="content p-2 text-center">
-              <h3><?php echo $area;?></h3>
-  
-              <p class=""><?php echo "House: ",$house, ", Road: ", $road1, $road2, ", Area: ",$area, " District: ", $district;?></p>
-  
-              <a style="margin-top: 40px" href=""><?php echo $rent, ' Taka/Hour';?></a>
-              <a href = "carbooking.php?parkingid=<?php echo $row1['id'] ?>" class="link-btn font-weight-bold">Book Now</a>
+            <div class="col-6 bg-gd border-right-1 border border-2 ">
+                <h4 id="spacenum"></h4>
             </div>
-          </div>
-          <?php
-            $no = $no+1;
-            }
-          ?>
+        </div>
 
-          <!-- <div class="box p-3 m-2">
-            <div class="image">
-              <img src="img/car 1.png" class="w-100 h-100" alt="" />
+        <div class="row flex justify-content-center align-items-center">
+            <div class="col-6 bg-gd border-right-1 border border-2 ">
+                <h4>CheckIn</h4>
             </div>
-            <div class="content p-2 text-center">
-              <h3>Mohommodpur</h3>
-  
-              <p class="">House no 2000 mohommodpur dhaka</p>
-  
-              <a style="margin-top: 40px" href=""> 12$</a>
-              <a href="" class="link-btn font-weight-bold">Book Now</a>
+            <div class="col-6 bg-gd border-right-1 border border-2 ">
+                <h4>5.00AM</h4>
             </div>
-          </div> -->
+        </div>
+        <div class="row flex justify-content-center align-items-center">
+            <div class="col-6 bg-gd border-right-1 border border-2 ">
+                <h4>CheckOut</h4>
+            </div>
+            <div class="col-6 bg-gd border-right-1 border border-2 ">
+            <a href = "updateparkingspace.php?id=<?php echo $row1['id'] ?>" class="link-btn font-weight-bold">Check Out</a>
+            </div>
+        </div>
+        <div class="row flex justify-content-center align-items-center">
+            <div class="col-6 bg-gd border-right-1 border border-2 ">
+                <h4>Bill</h4>
+            </div>
+            <div class="col-6 bg-gd border-right-1 border border-2 ">
+                <h4>120 Taka</h4>
+            </div>
+        </div>
+        <div class="row flex justify-content-center align-items-center">
+            <div class="col-6 text-center mt-3">
+                <a href = "updateparkingspace.php?id=<?php echo $row1['id'] ?>" class="link-btn font-weight-bold">Pay Bill</a>
+            </div>
+            <div class="col-6 text-center mt-3">
+               <a class="link-btn" href="">Pay bill</a>
+            </div>
+        </div>
+         
       </div>
-    </section>
-
-	
-
-
-
- 
-
-    <!-- footer area -->
-
+    </section>	
 
     <section class="footer">
         <div class="container">
@@ -296,5 +318,4 @@ $dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 </body>
 
->>>>>>> main
 </html>

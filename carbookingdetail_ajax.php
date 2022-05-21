@@ -1,8 +1,8 @@
 
 <?php
-$email = $_GET['email'];
+$parkingid = $_GET['parkingid'];
 $conn = mysqli_connect("localhost", "root", "", "carparking");
-$result = mysqli_query($conn, "SELECT * FROM parkingowner WHERE email = '$email'");
+$result = mysqli_query($conn, "SELECT * FROM parkingspace WHERE id = '$parkingid'");
  
 $data = array();
 while ($row = mysqli_fetch_object($result))
