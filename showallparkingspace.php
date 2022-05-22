@@ -166,6 +166,7 @@ $dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   
               <a style="margin-top: 40px" href=""><?php echo $rent, ' Taka/Hour';?></a>
               <a href = "carbooking.php?parkingid=<?php echo $row1['id'] ?>" class="link-btn font-weight-bold">Book Now</a>
+              <a href = "parkingspace_detail.php" class="link-btn font-weight-bold">View Details</a>
             </div>
           </div>
           <?php
