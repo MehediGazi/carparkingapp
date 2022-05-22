@@ -138,23 +138,24 @@
                 if (this.readyState == 4 && this.status == 200) {
                     var data = JSON.parse(this.responseText);
                     console.log(data);
-        
+                    var img = '<img class="w-100  text-center ratio ratio-1x1" style="margin-bottom: 10px;" src="';
                     for(var a = 0; a < data.length; a++) {
                         var area = data[a].area;
+                        document.getElementById("area").innerHTML = area;
                         var road1 = data[a].road1;
                         var road2 = data[a].road2;
                         var house = data[a].house;
                         var spacenum = data[a].spacenum;
+                        var spaceused = data[a].spaceused;
+                        var spaceleft = spacenum - spaceused;
+                        document.getElementById("spaceleft").innerHTML = spaceleft;
                         var rent = data[a].rent;
-                        var img = data[a].img;
+                        document.getElementById("rent").innerHTML = rent;
+                        var img = img + data[a].img + '" alt="">';
+                        document.getElementById("img").innerHTML = img;
+                        
                     }
-                    document.getElementById("area").innerHTML = area;
-                    document.getElementById("road1").innerHTML = road1;
-                    document.getElementById("road2").innerHTML = road2;
-                    document.getElementById("house").innerHTML = house;
-                    document.getElementById("spacenum").innerHTML = spacenum;
-                    document.getElementById("rent").innerHTML = rent;
-                    document.getElementById("img").innerHTML = img;
+                    
                 }
             };
         </script>
@@ -163,9 +164,9 @@
 ?>	
 				
     <section class="blogs" id="blogs">
-      <p class=" container font-weight-bold fs-4 text-center">Booking Details</p>
+    <p class=" container font-weight-bold fs-4 text-center">Booking Details</p>
       <div class=" container col-4 flex justify-content-center align-items-center mx-auto border-secondary p-4 rounded-3 shadow-lg">
-      <img class="w-100  text-center ratio ratio-1x1" style="margin-bottom: 10px;" src="./img/parking.jpg" alt="">
+      <div id = "img"></div>
         <div class="row flex justify-content-center align-items-center">
             <div class="col-6 bg-gd border-right-1 border border-2 ">
                 <h4>Area</h4>
@@ -180,10 +181,19 @@
                 <h4>Rent</h4>
             </div>
             <div class="col-6 bg-gd border-right-1 border border-2 ">
-                <h4 id="spacenum"></h4>
+                <h4 id="rent"></h4>
             </div>
         </div>
 
+        <div class="row flex justify-content-center align-items-center">
+            <div class="col-6 bg-gd border-right-1 border border-2 ">
+                <h4>Available Spaces</h4>
+            </div>
+            <div class="col-6 bg-gd border-right-1 border border-2 ">
+                <h4 id="spaceleft"></h4>
+            </div>
+        </div>
+        
         <div class="row flex justify-content-center align-items-center">
             <div class="col-6 bg-gd border-right-1 border border-2 ">
                 <h4>CheckIn</h4>
@@ -205,7 +215,7 @@
                 <h4>Bill</h4>
             </div>
             <div class="col-6 bg-gd border-right-1 border border-2 ">
-                <h4>120 Taka</h4>
+                <h4>- - - Taka</h4>
             </div>
         </div>
         <div class="row flex justify-content-center align-items-center">
