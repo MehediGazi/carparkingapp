@@ -121,6 +121,7 @@ $email = $_SESSION['email'];
                     <p>Find a safe place to keep your car.</p>
                     <button class="btn-grad1"><a href="showallparkingspace.php" class="hero1-btn mb-4">View all parking space</a></button>
                     <button class="btn-grad1"><a href="searchparkingspace.php" class="hero1-btn mb-4">Search parking space</a></button>
+                    <button class="btn-grad1"><a href="carbooking_history.php?email=<?php echo $email;?>" class="hero1-btn mb-4">Your Booking History</a></button>
                     
                 </div>
                 <div class="ideas-item bc-img">
