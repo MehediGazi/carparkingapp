@@ -104,7 +104,7 @@
             </div>
         </nav>
     </header>
-		
+
 <?php
     $bid = $_GET['bid'];
 
@@ -162,6 +162,7 @@
         <?php
     }
 ?>	
+				
     <section class="blogs" id="blogs">
     <p class=" container font-weight-bold fs-4 text-center">Booking Details</p>
       <div class=" container col-4 flex justify-content-center align-items-center mx-auto border-secondary p-4 rounded-3 shadow-lg">
