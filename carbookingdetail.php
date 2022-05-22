@@ -105,6 +105,63 @@
         </nav>
     </header>
 		
+<?php
+    $bid = $_GET['bid'];
+
+    $dbcon = new PDO("mysql:host=localhost:3306;dbname=carparking;","root","");
+    $dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+
+    $query1="SELECT * FROM bookingdetail WHERE bid = '$bid'";
+
+    $returnval1=$dbcon->query($query1);
+    $info1 = $returnval1->fetchAll();
+
+    foreach($info1 as $row1){
+        $parkingid = $row1['parkingid'];
+        $carno = $row1['corno'];
+        $bookingtime = $row1['bookingtime'];
+        $checkin = $row1['checkin'];
+        $checkintime = $row1['checkintime'];
+        $checkout = $row1['checkout'];
+        $checkouttime = $row1['checkouttime'];
+        $bill = $row1['bill'];
+        $paid = $row1['paid'];
+
+        ?>
+        <script>
+            var ajax = new XMLHttpRequest();
+            ajax.open("GET", "carbookingdetail_ajax.php?parkingid=<?php echo $parkingid;?>", true);
+            ajax.send();
+        
+            ajax.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var data = JSON.parse(this.responseText);
+                    console.log(data);
+                    var img = '<img class="w-100  text-center ratio ratio-1x1" style="margin-bottom: 10px;" src="';
+                    for(var a = 0; a < data.length; a++) {
+                        var area = data[a].area;
+                        document.getElementById("area").innerHTML = area;
+                        var road1 = data[a].road1;
+                        var road2 = data[a].road2;
+                        var house = data[a].house;
+                        var spacenum = data[a].spacenum;
+                        var spaceused = data[a].spaceused;
+                        var spaceleft = spacenum - spaceused;
+                        document.getElementById("spaceleft").innerHTML = spaceleft;
+                        var rent = data[a].rent;
+                        document.getElementById("rent").innerHTML = rent;
+                        var img = img + data[a].img + '" alt="">';
+                        document.getElementById("img").innerHTML = img;
+                        
+                    }
+                    
+                }
+            };
+        </script>
+        <?php
+    }
+?>	
     <section class="blogs" id="blogs">
     <p class=" container font-weight-bold fs-4 text-center">Booking Details</p>
       <div class=" container col-4 flex justify-content-center align-items-center mx-auto border-secondary p-4 rounded-3 shadow-lg">
