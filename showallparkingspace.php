@@ -40,10 +40,10 @@ $dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         <nav class=" fixed-top ">
             <div class="container">
                 <div class="wrapper d-flex align-items-center justify-content-between">
-                    <div class="logo d-flex align-items-center mb-0 mb-md-3">
+                <a href="index.html" class="logo cursor-pointer d-flex align-items-center mb-0 mb-md-3">
                         <img style="width:100px; height: 50px;margin-left: -10px;" src="img/carlogo.png" alt="">
                         <span class="mt-2 text-uppercase">Garir Bari</span>
-                    </div>
+                    </a>
                     <input type="radio" name="slide" id="menu-btn">
                     <input type="radio" name="slide" id="cancel-btn">
                     <ul class="nav-links">

@@ -498,7 +498,12 @@ nav .wrapper{
 
 
 
-
+       .cursor-pointer{
+            cursor: pointer;
+            list-style: none;
+            color: #000;
+            text-decoration: none;
+      }
 
     
 /* footer */

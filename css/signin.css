@@ -388,6 +388,13 @@ nav .wrapper{
     }
     /* sign in */
 
+    .cursor-pointer{
+      cursor: pointer;
+      list-style: none;
+      color: #000;
+      text-decoration: none;
+}
+
 .sign-in{
       background: linear-gradient(to top, #e7cdda 0%, #e7f3ea 100%);
 }
