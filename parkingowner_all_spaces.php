@@ -62,6 +62,8 @@ $ownerid = $_SESSION['id'];
                         <ul class="nav-links">
                             <label for="cancel-btn" class="btn cancel-btn"> <i class="fas fa-times"></i>
                                         </label>
+                                        
+                                        <li><a href="addparkingspace.html">Add Parking Space</a></li>
                           
                             <li><a href="" class="desktop-item">Profile
                                                     <i class="fas fa-chevron-down" id="arrowDown"
